@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>おでかけのしおり ｜ 2026.08.08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Zen+Maru+Gothic:wght@500;700;900&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --grass:#4bb86a; --grass-d:#2f9550; --sky:#5ab8ee; --sky-d:#2f8fd0;
+    --pink:#ff7fb0; --pink-d:#ef5f96; --gold:#ffcb3c; --purple:#9b6fd6;
+    --ink:#3a3550; --sub:#8b8aa5; --cream:#fbfaff; --line:#ecebf5;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{ margin:0; height:100%; }
+  body{ font-family:'Zen Maru Gothic',sans-serif; color:var(--ink); background:var(--sky); -webkit-font-smoothing:antialiased; overflow:hidden; }
+  .fred{ font-family:'Fredoka',sans-serif; }
+
+  #home{
+    position:relative; height:100dvh; width:100vw; overflow-y:auto; -webkit-overflow-scrolling:touch;
+    max-width:520px; margin:0 auto; background:var(--cream);
+    box-shadow:0 0 60px rgba(60,110,160,.25);
+  }
+  #home::before{ content:''; position:fixed; inset:0; max-width:520px; left:50%; transform:translateX(-50%); z-index:0; pointer-events:none;
+    background-image:radial-gradient(circle, rgba(155,111,214,.1) 1.4px, transparent 2px); background-size:22px 22px; }
+  .hero{
+    position:relative; z-index:1; padding:20px 20px 66px; text-align:center; color:#fff; overflow:hidden;
+    background:linear-gradient(160deg,var(--sky) 0%, var(--purple) 118%);
+    border-radius:0 0 32px 32px;
+  }
+  .hero::before{ content:''; position:absolute; left:-10%; right:-10%; bottom:-4px; height:34px; background:var(--grass);
+    border-radius:50% 50% 0 0 / 100% 100% 0 0; box-shadow:0 -6px 0 var(--grass-d) inset; }
+  .hero::after{ content:''; position:absolute; inset:0; background:repeating-linear-gradient(105deg, rgba(255,255,255,.1) 0 12px, transparent 12px 40px); pointer-events:none; }
+  .mascot-hero{ width:104px; position:relative; z-index:2; filter:drop-shadow(0 5px 7px rgba(40,60,110,.28)); margin-bottom:2px; }
+  .ribbon{ display:inline-block; font-family:'Mochiy Pop One',sans-serif; font-size:11px; letter-spacing:.14em; background:#fff; color:var(--pink-d); padding:5px 16px; border-radius:999px; box-shadow:0 3px 0 rgba(60,60,120,.15); position:relative; z-index:2; }
+  .hero h1{ font-family:'Mochiy Pop One',sans-serif; font-weight:400; font-size:26px; line-height:1.42; margin:12px 0 4px; position:relative; z-index:2; text-shadow:0 3px 0 rgba(80,60,150,.4); }
+  .hero .date{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:15px; letter-spacing:.06em; position:relative; z-index:2; }
+  .hero .stats{ display:flex; justify-content:center; gap:7px; margin-top:14px; position:relative; z-index:2; flex-wrap:wrap; }
+  .hero .stat{ background:#fff; color:var(--purple); font-weight:700; font-size:11.5px; padding:6px 12px; border-radius:999px; box-shadow:0 3px 0 rgba(80,60,150,.15); }
+
+  .sect{ position:relative; z-index:1; padding:22px 18px 2px; }
+  .sect-t{ font-family:'Mochiy Pop One',sans-serif; font-size:14px; color:var(--purple); display:flex; align-items:center; gap:8px; margin:0 4px 12px; }
+  .sect-t .cb{ width:20px; height:20px; }
+
+  .btn{ position:relative; z-index:1; display:grid; grid-template-columns:58px 1fr 20px; align-items:center; gap:12px; width:100%; text-align:left; border:2.5px solid #fff; cursor:pointer; margin-bottom:11px; background:#fff; border-radius:20px; padding:11px 14px; box-shadow:0 5px 0 var(--sh), 0 10px 18px -12px rgba(60,80,150,.5); transition:transform .12s, box-shadow .12s; font-family:inherit; color:var(--ink); }
+  .btn:active{ transform:translateY(4px); box-shadow:0 1px 0 var(--sh); }
+  .btn .tp{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:15px; color:#fff; background:var(--c); border-radius:13px; height:44px; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 -3px 0 rgba(0,0,0,.14); }
+  .btn .bt{ font-weight:700; font-size:15.5px; line-height:1.3; }
+  .btn .bs{ font-size:11.5px; color:var(--sub); margin-top:2px; }
+  .btn .ar{ color:var(--c); font-size:18px; font-weight:900; }
+
+  .utils{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; padding:6px 18px 30px; position:relative; z-index:1; }
+  .util{ border:2.5px solid #fff; cursor:pointer; font-family:inherit; background:#fff; border-radius:20px; padding:15px 8px 12px; text-align:center; box-shadow:0 5px 0 var(--sh), 0 10px 18px -12px rgba(60,80,150,.5); transition:transform .12s, box-shadow .12s; color:var(--ink); }
+  .util:active{ transform:translateY(4px); box-shadow:0 1px 0 var(--sh); }
+  .util .ic{ font-size:22px; line-height:1; }
+  .util .ut{ font-family:'Mochiy Pop One',sans-serif; font-size:12.5px; margin-top:7px; color:var(--c); }
+  .foot{ position:relative; z-index:1; text-align:center; font-size:10.5px; color:var(--sub); padding:0 20px 26px; line-height:1.7; }
+
+  /* ---------- DETAIL ---------- */
+  #overlay{ position:fixed; inset:0; z-index:50; max-width:520px; margin:0 auto; background:var(--cream); display:none; flex-direction:column; transform:translateX(100%); transition:transform .28s cubic-bezier(.4,0,.2,1); }
+  #overlay.open{ display:flex; transform:translateX(0); }
+  .bar{ flex:0 0 auto; display:flex; align-items:center; gap:12px; padding:calc(12px + env(safe-area-inset-top)) 16px 12px; background:var(--c,var(--sky)); color:#fff; box-shadow:0 4px 14px -6px rgba(0,0,0,.4); }
+  .back{ border:none; background:rgba(255,255,255,.28); color:#fff; width:38px; height:38px; border-radius:50%; font-size:18px; cursor:pointer; font-weight:900; flex:0 0 auto; }
+  .bar .btitle{ font-family:'Mochiy Pop One',sans-serif; font-size:16px; }
+  .bar .bnum{ margin-left:auto; font-family:'Fredoka',sans-serif; font-weight:700; opacity:.9; font-size:14px; }
+  .scroll{ flex:1 1 auto; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+
+  .dhero{ position:relative; height:200px; background:linear-gradient(160deg, var(--c), color-mix(in srgb, var(--c) 55%, #2a2450)); display:flex; align-items:flex-end; justify-content:center; overflow:hidden; }
+  .dhero::after{ content:''; position:absolute; left:-6%; right:-6%; bottom:-4px; height:26px; background:var(--cream); border-radius:50% 50% 0 0/100% 100% 0 0; }
+  .dhero .band{ position:absolute; inset:0; background:repeating-linear-gradient(-25deg, rgba(255,255,255,.12) 0 14px, transparent 14px 40px); }
+  .dhero .mascot{ width:138px; position:relative; z-index:1; margin-bottom:6px; filter:drop-shadow(0 5px 7px rgba(0,0,0,.2)); }
+  .dhero .time{ position:absolute; left:18px; bottom:18px; z-index:2; font-family:'Fredoka',sans-serif; font-weight:700; font-size:32px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.4); }
+  .dbody{ padding:22px 20px 60px; }
+  .dbody h2{ font-family:'Mochiy Pop One',sans-serif; font-weight:400; font-size:22px; line-height:1.42; margin:0 0 6px; }
+  .dmeta{ font-size:12.5px; color:var(--sub); margin-bottom:16px; }
+  .dbody p{ font-size:15px; line-height:1.95; margin:0; color:#544f6a; }
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+  .tag{ font-size:12px; font-weight:700; padding:7px 13px; border-radius:999px; background:#f1f0f8; color:var(--sub); }
+  .tag.free{ background:#e4f5ea; color:#2f9550; }
+  .tag.warn{ background:#fff1e0; color:#e08a2a; }
+  .tag.c{ background:color-mix(in srgb, var(--c) 16%, #fff); color:var(--c); }
+
+  .brow{ display:flex; justify-content:space-between; align-items:center; padding:14px 6px; border-bottom:2px dotted var(--line); font-size:15px; }
+  .brow b{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:18px; }
+  .btot{ display:flex; justify-content:space-between; align-items:center; margin-top:18px; padding:16px 18px; border-radius:18px; background:linear-gradient(135deg,var(--grass),var(--grass-d)); color:#fff; box-shadow:0 6px 0 rgba(30,120,70,.3); }
+  .btot b{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:24px; color:var(--gold); }
+  .note{ margin-top:16px; font-size:12px; color:var(--sub); line-height:1.75; }
+
+  .check{ display:flex; align-items:center; gap:13px; padding:15px 16px; background:#fff; border:2px solid var(--line); border-radius:16px; margin-bottom:10px; cursor:pointer; user-select:none; box-shadow:0 3px 0 var(--line); }
+  .check .box{ width:26px; height:26px; border-radius:9px; border:2.5px solid #cdccdf; background:#f8f8fd; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:900; color:#fff; flex:0 0 auto; }
+  .check .lbl{ font-size:15px; font-weight:700; }
+  .check.on{ background:#f3fff7; border-color:#a9e4bf; }
+  .check.on .box{ background:var(--grass); border-color:var(--grass); }
+  .check.on .box::after{ content:'✓'; }
+  .check.on .lbl{ color:#a9b7ae; text-decoration:line-through; }
+
+  .mrow{ display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center; padding:15px 6px; border-bottom:2px dotted var(--line); }
+  .mroute{ font-weight:700; font-size:14.5px; }
+  .mhow{ font-size:12px; color:var(--sub); margin-top:3px; }
+  .mtime{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:16px; color:var(--sky-d); white-space:nowrap; }
+  .hidden{ display:none !important; }
+</style>
+</head>
+<body>
+
+<!-- reusable mascot: original horse-girl idol character -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="peko">
+  <!-- twin-tail hair behind -->
+  <path d="M40 92 q-26 46 -12 96 q20 -6 26 -32 q-10 -32 6 -58z" fill="#8f6ad0"/>
+  <path d="M160 92 q26 46 12 96 q-20 -6 -26 -32 q10 -32 -6 -58z" fill="#8f6ad0"/>
+  <!-- hair ribbons -->
+  <circle cx="30" cy="150" r="11" fill="var(--pink)"/>
+  <circle cx="170" cy="150" r="11" fill="var(--pink)"/>
+  <!-- collar -->
+  <path d="M52 150 q48 34 96 0 l-6 40 -84 0 z" fill="#fff"/>
+  <path d="M74 158 l26 30 26-30 -12 40 -28 0z" fill="var(--sky)"/>
+  <!-- neck -->
+  <rect x="88" y="132" width="24" height="20" fill="#ffe4cf"/>
+  <!-- horse ears -->
+  <path d="M48 60 q-12 -36 6 -50 q18 8 22 38z" fill="#a984e0"/>
+  <path d="M55 58 q-5 -26 6 -37 q9 8 11 29z" fill="#ffd9e6"/>
+  <path d="M152 60 q12 -36 -6 -50 q-18 8 -22 38z" fill="#a984e0"/>
+  <path d="M145 58 q5 -26 -6 -37 q-9 8 -11 29z" fill="#ffd9e6"/>
+  <!-- hair back -->
+  <path d="M46 96 q-8 60 26 74 q28 12 56 0 q34 -14 26 -74 q-4 -66 -54 -66 q-50 0 -54 66z" fill="#9b6fd6"/>
+  <!-- face -->
+  <ellipse cx="100" cy="96" rx="50" ry="52" fill="#ffeede"/>
+  <!-- bangs -->
+  <path d="M50 86 q2 -54 50 -54 q48 0 50 54 q-18 -22 -32 -15 q-4 -19 -18 -19 q-14 0 -18 19 q-14 -7 -32 15z" fill="#b083e6"/>
+  <path d="M48 88 q11 -15 24 -13 l-7 24 q-13 2 -17 -11z" fill="#b083e6"/>
+  <path d="M152 88 q-11 -15 -24 -13 l7 24 q13 2 17 -11z" fill="#b083e6"/>
+  <!-- side hair flips -->
+  <path d="M48 96 q-18 8 -16 30 q11 -7 20 -12z" fill="#9b6fd6"/>
+  <path d="M152 96 q18 8 16 30 q-11 -7 -20 -12z" fill="#9b6fd6"/>
+  <!-- cheeks -->
+  <circle cx="70" cy="108" r="11" fill="#ffb0c9" opacity=".85"/>
+  <circle cx="130" cy="108" r="11" fill="#ffb0c9" opacity=".85"/>
+  <!-- big idol eyes -->
+  <ellipse cx="80" cy="94" rx="10" ry="13" fill="#fff"/>
+  <ellipse cx="120" cy="94" rx="10" ry="13" fill="#fff"/>
+  <ellipse cx="80" cy="95" rx="8" ry="11" fill="#4aa8d6"/>
+  <ellipse cx="120" cy="95" rx="8" ry="11" fill="#4aa8d6"/>
+  <circle cx="80" cy="98" r="4.6" fill="#243a66"/>
+  <circle cx="120" cy="98" r="4.6" fill="#243a66"/>
+  <circle cx="83" cy="89" r="3.6" fill="#fff"/>
+  <circle cx="123" cy="89" r="3.6" fill="#fff"/>
+  <!-- brows -->
+  <path d="M70 76 q10 -6 20 -1" stroke="#9a6fd0" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M110 75 q10 -5 20 1" stroke="#9a6fd0" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- smile -->
+  <path d="M86 118 q14 11 28 0" stroke="#d0668a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- star cheek deco -->
+  <path d="M138 118 l2.2 4.4 4.8 .5-3.5 3.4 .9 4.8-4.4-2.4-4.4 2.4 .9-4.8-3.5-3.4 4.8-.5z" fill="var(--gold)"/>
+</g>
+</defs></svg>
+
+<!-- ================= HOME ================= -->
+<main id="home">
+  <div class="hero">
+    <svg class="mascot-hero" viewBox="0 0 200 200"><use href="#peko"/></svg>
+    <div><span class="ribbon">★ OUR DAY OUT ★</span></div>
+    <h1>森と夕景の<br>夏さんぽ♪</h1>
+    <div class="date">2026 . 08 . 08 &nbsp;SAT</div>
+    <div class="stats">
+      <span class="stat">原宿→新宿</span>
+      <span class="stat">10:30-20:00</span>
+      <span class="stat">目安 ¥6,500</span>
+    </div>
+  </div>
+
+  <div class="sect">
+    <div class="sect-t"><svg class="cb" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z" fill="var(--gold)"/></svg>きょうのスケジュール</div>
+
+    <button class="btn" data-open="d1" style="--c:var(--pink-d); --sh:#f8d6e4;">
+      <span class="tp">10:30</span><span><span class="bt">集合｜原宿駅</span><span class="bs">表参道口・徒歩2分</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d2" style="--c:var(--grass); --sh:#cdead6;">
+      <span class="tp">10:40</span><span><span class="bt">明治神宮で森林浴</span><span class="bs">入苑無料・約70分</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d3" style="--c:var(--gold); --sh:#f6e6b8;">
+      <span class="tp">12:00</span><span><span class="bt">ランチ｜JB's TOKYO 🍔</span><span class="bs">名物・四角いバーガー</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d4" style="--c:var(--sky-d); --sh:#cbe6f5;">
+      <span class="tp">13:15</span><span><span class="bt">太田記念美術館</span><span class="bs">浮世絵・涼しい屋内</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d5" style="--c:var(--pink-d); --sh:#f8d6e4;">
+      <span class="tp">14:45</span><span><span class="bt">表参道さんぽ＆カフェ</span><span class="bs">並木道・ひと休み</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d6" style="--c:var(--grass); --sh:#cdead6;">
+      <span class="tp">16:30</span><span><span class="bt">代々木公園でひとやすみ</span><span class="bs">入園無料・夕方は涼しい</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d7" style="--c:var(--gold); --sh:#f6e6b8;">
+      <span class="tp">17:30</span><span><span class="bt">早め夕食｜新宿</span><span class="bs">JR1駅・お財布にやさしく</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d8" style="--c:var(--purple); --sh:#e2d4f5;">
+      <span class="tp">19:15</span><span><span class="bt">締め｜都庁展望室で夜景</span><span class="bs">地上202m・入場無料</span></span><span class="ar">›</span></button>
+  </div>
+
+  <div class="sect" style="padding-bottom:2px;">
+    <div class="sect-t"><svg class="cb" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z" fill="var(--gold)"/></svg>じゅんび＆メモ</div>
+  </div>
+  <div class="utils">
+    <button class="util" data-open="dbudget" style="--c:var(--grass); --sh:#cdead6;"><div class="ic">💰</div><div class="ut">予算</div></button>
+    <button class="util" data-open="dcheck" style="--c:var(--pink-d); --sh:#f8d6e4;"><div class="ic">🎒</div><div class="ut">持ちもの</div></button>
+    <button class="util" data-open="daccess" style="--c:var(--sky-d); --sh:#cbe6f5;"><div class="ic">🚃</div><div class="ut">アクセス</div></button>
+  </div>
+  <div class="foot">プランは目安です ・ 当日の体調・天候にあわせて自由にどうぞ ✿</div>
+</main>
+
+<!-- ================= DETAIL ================= -->
+<div id="overlay">
+  <div class="bar" id="bar">
+    <button class="back" id="back">‹</button>
+    <span class="btitle" id="bartitle">詳細</span>
+    <span class="bnum" id="barnum"></span>
+  </div>
+  <div class="scroll" id="scroll">
+
+    <div class="detail hidden" data-id="d1" data-c="var(--pink-d)" data-title="集合" data-num="STEP 01">
+      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">10:30</div></div>
+      <div class="dbody"><h2>集合｜原宿駅・表参道口</h2><div class="dmeta">JR山手線／東京メトロ 明治神宮前〈原宿〉駅</div>
+        <p>まずは待ち合わせ。原宿駅は表参道口が分かりやすい。少し早く着いたら駅前の日陰で涼みながら待つのも◎。改札を出たら、明治神宮の入口（南参道）まで徒歩1〜2分。ここからさんぽスタート！</p>
+        <div class="tags"><span class="tag c">移動 徒歩2分</span><span class="tag">水分を買っておくと◎</span></div>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="d2" data-c="var(--grass)" data-title="明治神宮" data-num="STEP 02">
+      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">10:40</div></div>
+      <div class="dbody"><h2>明治神宮で森林浴＆お参り</h2><div class="dmeta">南参道〜本殿・所要 約70分／入苑無料</div>
+        <p>都心とは思えない広大な鎮守の森。玉砂利の参道は木々に覆われ、真夏でも体感温度がぐっと下がる。大鳥居をくぐって本殿へお参り、清正井（きよまさのいど）まで足をのばすのも気持ちいい。人の流れもゆるやかで、静かに歩けるのがうれしいポイント。</p>
+        <div class="tags"><span class="tag free">入苑無料</span><span class="tag c">木陰で涼しい</span><span class="tag warn">開門時間は当日確認</span></div>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="d3" data-c="var(--gold)" data-title="ランチ" data-num="STEP 03">
+      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">12:00</div></div>
+      <div class="dbody"><h2>ランチ｜JB's TOKYO 代々木本店 🍔</h2><div class="dmeta">渋谷区代々木1-33-3・原宿から徒歩10分ほど・所要 約60分</div>
+        <p>今日いちばんのお楽しみ、名物の"四角いバーガー"！北海道産小麦の自家製食パンバンズに、注文ごとに焼くスマッシュパティ。ソースまで100％手づくりで、シンプルな「100％バーガー」はワンコインから。小さな人気店で行列になりやすいので、少し早めの到着がおすすめ。混んでいたら、渋谷ミヤシタパーク店（原宿から徒歩圏）に切り替えても◎。</p>
+        <div class="tags"><span class="tag c">¥800-1,200／人</span><span class="tag">11:00 open</span><span class="tag warn">席少なめ・早めが安心</span></div>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="d4" data-c="var(--sky-d)" data-title="美術館" data-num="STEP 04">
+      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">13:15</div></div>
+      <div class="dbody"><h2>太田記念美術館で浮世絵さんぽ</h2><div class="dmeta">原宿・所要 約75分／一番暑い時間は屋内で</div>
+        <p>日ざしが強い午後は、静かな美術館でひと休み。世界有数の浮世絵コレクションを、涼しい館内でゆっくり鑑賞。規模はほどよく、混みすぎず、落ち着いて過ごせる。入館料もリーズナブルで、畳のスペースもあり足を休められる。</p>
+        <div class="tags"><span class="tag c">¥800-1,200／人</span><span class="tag">冷房・静か</span><span class="tag warn">会期・料金は事前確認</span></div>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="d5" data-c="var(--pink-d)" data-title="表参道" data-num="STEP 05">
+      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">14:45</div></div>
+      <div class="dbody"><h2>表参道さんぽ＆カフェ休憩</h2><div class="dmeta">表参道〜裏原宿・所要 約90分</div>
+        <p>けやき並木の表参道をのんびり。ウインドウショッピングは"見るだけ"でも楽しい。裏路地の雑貨屋さんをのぞいたり、冷房のきいたカフェでアイスドリンク＆スイーツをシェア。歩き疲れたら、ここでしっかり座って休憩を。</p>
+        <div class="tags"><span class="tag c">カフェ ¥600-900／人</span><span class="tag">日陰の並木道</span></div>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="d6" data-c="var(--grass)" data-title="代々木公園" data-num="STEP 06">
+      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">16:30</div></div>
+      <div class="dbody"><h2>代々木公園でひとやすみ</h2><div class="dmeta">原宿すぐ・所要 約45分／入園無料</div>
+        <p>夕方は日ざしがやわらぎ、風も出てくる。広い芝生と噴水のある公園で、木陰のベンチにすわってのんびり。少しずつ暮れていく空を眺めながら、今日撮った写真を見返す時間。ここまでの歩き疲れをリセット。</p>
+        <div class="tags"><span class="tag free">入園無料</span><span class="tag c">夕方は涼しい</span></div>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="d7" data-c="var(--gold)" data-title="夕食" data-num="STEP 07">
+      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">17:30</div></div>
+      <div class="dbody"><h2>早め夕食｜新宿でごはん</h2><div class="dmeta">原宿→新宿（JR1駅 約5分）・所要 約90分</div>
+        <p>電車で一駅、新宿へ。混みあう前の早めの時間に夕食を。予算にやさしい定食屋さんや、ゆっくり座れる居酒屋・食堂など選択肢が豊富。がっつりでも軽めでも、その日の気分で。落ち着いた雰囲気のお店を選ぶと会話もはずむ。</p>
+        <div class="tags"><span class="tag c">¥1,500-2,500／人</span><span class="tag warn">土曜夜は早め入店が◎</span></div>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="d8" data-c="var(--purple)" data-title="夜景" data-num="STEP 08">
+      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">19:15</div></div>
+      <div class="dbody"><h2>締め｜東京都庁 展望室で夜景</h2><div class="dmeta">新宿・地上202m・所要 約45分／入場無料</div>
+        <p>最後は無料で楽しめる特等席へ。地上202mの展望室から、きらめく東京の夜景を二人で。エレベーターで一気に昇れて、疲れた足にもやさしい。窓ぎわで静かに景色を眺めて、いい時間で解散。今日もおつかれさま！</p>
+        <div class="tags"><span class="tag free">入場無料</span><span class="tag warn">開室日・時間は事前確認</span></div>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="dbudget" data-c="var(--grass)" data-title="予算のめやす" data-num="BUDGET">
+      <div class="dbody" style="padding-top:26px;">
+        <div class="brow"><span>明治神宮（入苑）</span><b>¥0</b></div>
+        <div class="brow"><span>ランチ｜JB's TOKYO</span><b>¥1,000</b></div>
+        <div class="brow"><span>太田記念美術館</span><b>¥1,000</b></div>
+        <div class="brow"><span>カフェ休憩</span><b>¥700</b></div>
+        <div class="brow"><span>代々木公園</span><b>¥0</b></div>
+        <div class="brow"><span>夕食（新宿）</span><b>¥2,000</b></div>
+        <div class="brow"><span>東京都庁 展望室</span><b>¥0</b></div>
+        <div class="brow"><span>交通費（IC）</span><b>¥600</b></div>
+        <div class="btot"><span style="font-weight:700;">合計めやす（1人）</span><b>¥6,500</b></div>
+        <p class="note">※ 無料スポットを多めにした、お財布にやさしいプラン。入館料や飲食は変動するので現地で最新をご確認を。二人分で目安 ¥13,000ほど。</p>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="dcheck" data-c="var(--pink-d)" data-title="持ちものリスト" data-num="CHECK">
+      <div class="dbody" style="padding-top:22px;" id="checklist">
+        <p class="note" style="margin:0 0 16px;">タップでチェックできます ✓</p>
+        <div class="check"><div class="box"></div><span class="lbl">スマホ＆モバイルバッテリー</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">現金・交通系IC</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">日傘 or 帽子</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">冷感タオル・扇子</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">飲みもの（水分補給）</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">ハンカチ・ティッシュ</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">日焼け止め</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">カメラ</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">絆創膏など救急セット</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">歩きやすい靴</span></div>
+      </div>
+    </div>
+
+    <div class="detail hidden" data-id="daccess" data-c="var(--sky-d)" data-title="移動メモ" data-num="ACCESS">
+      <div class="dbody" style="padding-top:26px;">
+        <div class="mrow"><div><div class="mroute">原宿駅 → 明治神宮</div><div class="mhow">徒歩（南参道入口）</div></div><span class="mtime">約2分</span></div>
+        <div class="mrow"><div><div class="mroute">明治神宮 → JB's TOKYO 代々木本店</div><div class="mhow">徒歩</div></div><span class="mtime">約10分</span></div>
+        <div class="mrow"><div><div class="mroute">JB's → 美術館 → 表参道 → 代々木公園</div><div class="mhow">すべて徒歩圏（原宿エリア）</div></div><span class="mtime">各5〜10分</span></div>
+        <div class="mrow"><div><div class="mroute">原宿駅 → 新宿駅</div><div class="mhow">JR山手線</div></div><span class="mtime">約5分</span></div>
+        <div class="mrow"><div><div class="mroute">新宿駅 → 東京都庁</div><div class="mhow">徒歩（西新宿）</div></div><span class="mtime">約10分</span></div>
+        <p class="note" style="margin-top:20px;">交通系ICがあると一駅移動もスムーズ。無料スポットが主役なので、その分ランチとカフェは少し贅沢しても◎</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  var overlay=document.getElementById('overlay'), bar=document.getElementById('bar'), scroll=document.getElementById('scroll');
+  var details=scroll.querySelectorAll('.detail');
+  function open(id){
+    var target=null;
+    details.forEach(function(d){ var m=d.getAttribute('data-id')===id; d.classList.toggle('hidden',!m); if(m) target=d; });
+    if(!target) return;
+    var c=target.getAttribute('data-c');
+    document.documentElement.style.setProperty('--c',c);
+    bar.style.setProperty('--c',c);
+    document.getElementById('bartitle').textContent=target.getAttribute('data-title');
+    document.getElementById('barnum').textContent=target.getAttribute('data-num');
+    overlay.classList.add('open'); scroll.scrollTop=0;
+  }
+  function close(){ overlay.classList.remove('open'); }
+  document.querySelectorAll('[data-open]').forEach(function(b){ b.addEventListener('click',function(){ open(b.getAttribute('data-open')); }); });
+  document.getElementById('back').addEventListener('click',close);
+  document.getElementById('checklist').addEventListener('click',function(e){ var r=e.target.closest('.check'); if(r) r.classList.toggle('on'); });
+</script>
+</body>
+</html>
