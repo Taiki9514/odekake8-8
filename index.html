@@ -44,14 +44,11 @@
   .sect-t{ font-family:'Mochiy Pop One',sans-serif; font-size:14px; color:var(--purple); display:flex; align-items:center; gap:8px; margin:0 4px 12px; }
   .sect-t .cb{ width:20px; height:20px; }
 
-  .btn{ position:relative; z-index:1; display:grid; grid-template-columns:64px 1fr 18px; align-items:center; gap:12px; width:100%; text-align:left; border:2.5px solid #fff; cursor:pointer; margin-bottom:11px; background:#fff; border-radius:20px; padding:11px 14px; box-shadow:0 5px 0 var(--sh), 0 10px 18px -12px rgba(60,80,150,.5); transition:transform .12s, box-shadow .12s; font-family:inherit; color:var(--ink); }
+  .btn{ position:relative; z-index:1; display:grid; grid-template-columns:58px 1fr 20px; align-items:center; gap:12px; width:100%; text-align:left; border:2.5px solid #fff; cursor:pointer; margin-bottom:11px; background:#fff; border-radius:20px; padding:11px 14px; box-shadow:0 5px 0 var(--sh), 0 10px 18px -12px rgba(60,80,150,.5); transition:transform .12s, box-shadow .12s; font-family:inherit; color:var(--ink); }
   .btn:active{ transform:translateY(4px); box-shadow:0 1px 0 var(--sh); }
-  .btn .thumb{ position:relative; width:64px; height:64px; border-radius:16px; overflow:hidden; background:color-mix(in srgb, var(--c) 22%, #fff); box-shadow:inset 0 0 0 2px #fff, 0 4px 10px -5px rgba(60,80,150,.55); }
-  .btn .thumb image-slot{ position:absolute; inset:0; width:100%; height:100%; }
-  .btn .txt{ min-width:0; }
-  .btn .tp{ display:inline-block; font-family:'Fredoka',sans-serif; font-weight:700; font-size:12px; color:#fff; background:var(--c); border-radius:8px; padding:2px 10px; margin-bottom:5px; box-shadow:inset 0 -2px 0 rgba(0,0,0,.14); }
-  .btn .bt{ display:block; font-weight:700; font-size:15.5px; line-height:1.3; }
-  .btn .bs{ display:block; font-size:11.5px; color:var(--sub); margin-top:2px; }
+  .btn .tp{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:14px; color:#fff; background:var(--c); border-radius:13px; height:44px; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 -3px 0 rgba(0,0,0,.14); }
+  .btn .bt{ font-weight:700; font-size:15.5px; line-height:1.3; }
+  .btn .bs{ font-size:11.5px; color:var(--sub); margin-top:2px; }
   .btn .ar{ color:var(--c); font-size:18px; font-weight:900; }
 
   .utils{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; padding:6px 18px 30px; position:relative; z-index:1; }
@@ -70,12 +67,12 @@
   .bar .bnum{ margin-left:auto; font-family:'Fredoka',sans-serif; font-weight:700; opacity:.9; font-size:14px; }
   .scroll{ flex:1 1 auto; overflow-y:auto; -webkit-overflow-scrolling:touch; }
 
-  .dhero{ position:relative; height:220px; overflow:hidden; background:color-mix(in srgb, var(--c) 32%, #2a2450); }
-  .dhero::after{ content:''; position:absolute; left:-6%; right:-6%; bottom:-4px; height:26px; background:var(--cream); border-radius:50% 50% 0 0/100% 100% 0 0; z-index:3; pointer-events:none; }
-  .dhero image-slot{ position:absolute; inset:0; width:100%; height:100%; }
-  .dhero .scrim{ position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg, rgba(0,0,0,.18) 0%, transparent 26%, transparent 52%, rgba(0,0,0,.5) 100%); }
-  .dhero .photo{ max-height:150px; max-width:72%; object-fit:contain; position:relative; z-index:1; margin-bottom:14px; border-radius:10px; background:#fff; padding:6px; box-shadow:0 8px 16px -5px rgba(0,0,0,.35); transform:rotate(-2deg); }
-  .dhero .time{ position:absolute; left:18px; bottom:16px; z-index:4; font-family:'Fredoka',sans-serif; font-weight:700; font-size:30px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.5); }
+  .dhero{ position:relative; height:216px; background:linear-gradient(160deg, var(--c), color-mix(in srgb, var(--c) 55%, #2a2450)); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .dhero::after{ content:''; position:absolute; left:-6%; right:-6%; bottom:-4px; height:26px; background:var(--cream); border-radius:50% 50% 0 0/100% 100% 0 0; z-index:3; }
+  .dhero .band{ position:absolute; inset:0; background:repeating-linear-gradient(-25deg, rgba(255,255,255,.12) 0 14px, transparent 14px 40px); }
+  .dhero::before{ content:''; position:absolute; width:230px; height:230px; border-radius:50%; background:radial-gradient(circle, rgba(255,255,255,.5), transparent 62%); z-index:1; }
+  .dhero .photo{ max-height:172px; max-width:78%; object-fit:contain; position:relative; z-index:2; margin-bottom:12px; border-radius:14px; background:#fff; padding:9px; border:1px solid rgba(0,0,0,.05); box-shadow:0 14px 30px -10px rgba(0,0,0,.5), 0 0 0 7px rgba(255,255,255,.32); transform:rotate(-2.5deg); }
+  .dhero .time{ position:absolute; left:18px; bottom:16px; z-index:4; text-shadow:0 2px 12px rgba(0,0,0,.55); font-family:'Fredoka',sans-serif; font-weight:700; font-size:30px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.5); }
   .dbody{ padding:22px 20px 60px; }
   .dbody h2{ font-family:'Mochiy Pop One',sans-serif; font-weight:400; font-size:22px; line-height:1.42; margin:0 0 6px; }
   .dmeta{ font-size:12.5px; color:var(--sub); margin-bottom:16px; }
@@ -122,9 +119,31 @@
   .lgi{ display:flex; align-items:center; gap:9px; font-size:12.5px; font-weight:700; color:#4a4560; }
   .lgi .pin{ width:22px; height:22px; border-radius:50%; color:#fff; font-family:'Fredoka',sans-serif; font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; flex:0 0 auto; box-shadow:0 2px 0 rgba(0,0,0,.15); }
   .hidden{ display:none !important; }
+
+  /* ---------- OVER-FRAME PEKO STICKERS ---------- */
+  .ornaments{ position:fixed; inset:0; left:0; right:0; max-width:520px; margin:0 auto; z-index:6; pointer-events:none; }
+  .ornaments .stk{ position:absolute; display:block; border-radius:16px; border:4px solid #fff; background:#fff; padding:2px;
+    box-shadow:0 10px 22px -8px rgba(50,50,110,.55), 0 2px 0 rgba(150,150,190,.35); }
+  .ornaments .stk::after{ content:''; position:absolute; inset:0; border-radius:12px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.05); }
+  .stk.s1{ top:60px;  right:-30px; width:96px;  transform:rotate(8deg); }
+  .stk.s2{ top:302px; left:-58px;  width:78px;  transform:rotate(-12deg); }
+  .stk.s3{ top:560px; right:-30px; width:84px;  transform:rotate(-7deg); }
+  .stk.s4{ bottom:52px; left:-56px; width:80px;  transform:rotate(9deg); }
+  @media (max-width:430px){
+    .stk.s1{ width:80px; right:-22px; } .stk.s2{ width:66px; left:-52px; }
+    .stk.s3{ width:70px; right:-22px; } .stk.s4{ width:66px; left:-50px; }
+  }
 </style>
 </head>
 <body>
+
+<!-- over-frame Peko stickers -->
+<div class="ornaments" aria-hidden="true">
+  <img class="stk s1" src="uploads/index_im07-f1ce37ba.jpg" alt="">
+  <img class="stk s2" src="uploads/index_im04-e150050d.jpg" alt="">
+  <img class="stk s3" src="uploads/index_im09-95812bb3.jpg" alt="">
+  <img class="stk s4" src="uploads/index_im03-493d1e89.jpg" alt="">
+</div>
 
 <!-- ================= HOME ================= -->
 <main id="home">
@@ -144,21 +163,21 @@
     <div class="sect-t"><svg class="cb" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z" fill="var(--gold)"/></svg>きょうのスケジュール</div>
 
     <button class="btn" data-open="d0" style="--c:var(--sky); --sh:#cbe6f5;">
-      <span class="thumb"><image-slot id="sp-shibuya" shape="rect"></image-slot></span><span class="txt"><span class="tp">10:45</span><span class="bt">集合｜渋谷駅</span><span class="bs">ハチ公口で待ち合わせ</span></span><span class="ar">›</span></button>
+      <span class="tp">10:45</span><span><span class="bt">集合｜渋谷駅</span><span class="bs">ハチ公口で待ち合わせ</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d1" style="--c:var(--gold); --sh:#f6e6b8;">
-      <span class="thumb"><image-slot id="sp-jbs" shape="rect"></image-slot></span><span class="txt"><span class="tp">11:00</span><span class="bt">ランチ｜JB's TOKYO ミヤシタパーク店 🍔</span><span class="bs">渋谷・名物 四角いバーガー</span></span><span class="ar">›</span></button>
+      <span class="tp">11:00</span><span><span class="bt">ランチ｜JB's TOKYO ミヤシタパーク店 🍔</span><span class="bs">渋谷・名物 四角いバーガー</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d2" style="--c:var(--pink-d); --sh:#f8d6e4;">
-      <span class="thumb"><image-slot id="sp-sanpo" shape="rect"></image-slot></span><span class="txt"><span class="tp">12:15</span><span class="bt">渋谷・原宿さんぽ</span><span class="bs">キャットストリートを北へ</span></span><span class="ar">›</span></button>
+      <span class="tp">12:15</span><span><span class="bt">渋谷・原宿さんぽ</span><span class="bs">キャットストリートを北へ</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d3" style="--c:var(--grass); --sh:#cdead6;">
-      <span class="thumb"><image-slot id="sp-jingu" shape="rect"></image-slot></span><span class="txt"><span class="tp">13:00</span><span class="bt">明治神宮で森林浴</span><span class="bs">入苑無料・木陰で涼しい</span></span><span class="ar">›</span></button>
+      <span class="tp">13:00</span><span><span class="bt">明治神宮で森林浴</span><span class="bs">入苑無料・木陰で涼しい</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d4" style="--c:var(--sky-d); --sh:#cbe6f5;">
-      <span class="thumb"><image-slot id="sp-sbux" shape="rect"></image-slot></span><span class="txt"><span class="tp">14:30</span><span class="bt">カフェ休憩｜スタバ 東急プラザ</span><span class="bs">表参道原宿・おもはらの森</span></span><span class="ar">›</span></button>
+      <span class="tp">14:30</span><span><span class="bt">カフェ休憩｜スタバ 東急プラザ</span><span class="bs">表参道原宿・おもはらの森</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d6" style="--c:var(--pink-d); --sh:#f8d6e4;">
-      <span class="thumb"><image-slot id="sp-taro" shape="rect"></image-slot></span><span class="txt"><span class="tp">15:45</span><span class="bt">岡本太郎記念館 🎨</span><span class="bs">南青山・涼しい屋内でアート鑑賞</span></span><span class="ar">›</span></button>
+      <span class="tp">15:45</span><span><span class="bt">岡本太郎記念館 🎨</span><span class="bs">南青山・涼しい屋内でアート鑑賞</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d7" style="--c:var(--gold); --sh:#f6e6b8;">
-      <span class="thumb"><image-slot id="sp-torafuku" shape="rect"></image-slot></span><span class="txt"><span class="tp">18:00</span><span class="bt">夕食｜寅福 青山本店</span><span class="bs">和食・表参道駅すぐ</span></span><span class="ar">›</span></button>
+      <span class="tp">18:00</span><span><span class="bt">夕食｜寅福 青山本店</span><span class="bs">和食・表参道駅すぐ</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d8" style="--c:var(--purple); --sh:#e2d4f5;">
-      <span class="thumb"><image-slot id="sp-hanabi" shape="rect"></image-slot></span><span class="txt"><span class="tp">19:30</span><span class="bt">神宮外苑花火大会 🎆</span><span class="bs">夕食から徒歩で夏の締め</span></span><span class="ar">›</span></button>
+      <span class="tp">19:30</span><span><span class="bt">神宮外苑花火大会 🎆</span><span class="bs">夕食から徒歩で夏の締め</span></span><span class="ar">›</span></button>
   </div>
 
   <div class="sect" style="padding-bottom:2px;">
@@ -183,7 +202,7 @@
   <div class="scroll" id="scroll">
 
     <div class="detail hidden" data-id="d0" data-c="var(--sky)" data-title="集合" data-num="START">
-      <div class="dhero"><image-slot id="sp-shibuya" shape="rect" placeholder="渋谷駅・ハチ公前の写真"></image-slot><div class="scrim"></div><div class="time">10:45</div></div>
+      <div class="dhero"><div class="band"></div><img class="photo" src="uploads/index_im09-95812bb3.jpg" alt=""><div class="time">10:45</div></div>
       <div class="dbody"><h2>集合｜渋谷駅・ハチ公口</h2><div class="dmeta">JR・各線 渋谷駅・ハチ公口前（忠犬ハチ公像）</div>
         <p>今日のスタートは渋谷・ハチ公前で待ち合わせ。定番の目印なので迷いにくい。少し早く着いたら、駅周辺の日陰で涼みながら。このあとはミヤシタパークまで徒歩すぐなので、まずはおしゃべりしながらウォーミングアップ。</p>
         <div class="tags"><span class="tag c">10:45集合</span><span class="tag">ハチ公前</span></div>
@@ -192,7 +211,7 @@
     </div>
 
     <div class="detail hidden" data-id="d1" data-c="var(--gold)" data-title="ランチ" data-num="STEP 01">
-      <div class="dhero"><image-slot id="sp-jbs" shape="rect" placeholder="JB's の四角いバーガーの写真"></image-slot><div class="scrim"></div><div class="time">11:00</div></div>
+      <div class="dhero"><div class="band"></div><img class="photo" src="uploads/index_im07-f1ce37ba.jpg" alt=""><div class="time">11:00</div></div>
       <div class="dbody"><h2>ランチ｜JB's TOKYO ミヤシタパーク店 🍔</h2><div class="dmeta">渋谷 MIYASHITA PARK South 2F・渋谷駅 徒歩3分／営業 11:00〜21:00（L.O.20:30）</div>
         <p>まずは今日いちばんのお楽しみから！名物の"四角いバーガー"。北海道産小麦の自家製食パンバンズに、注文ごとに焼くスマッシュパティ。ソースまで100％手づくりで、シンプルな「ハンバーガー」はワンコインクラスから。渋谷のミヤシタパーク内で席数もあり、スタートにぴったり。開店の11:00ごろは比較的スムーズ。腹ごしらえしたら、原宿方面へ歩き出そう。</p>
         <div class="tags"><span class="tag c">¥800-1,200／人</span><span class="tag">11:00〜21:00</span><span class="tag warn">昼どきは混みやすい</span></div>
@@ -201,7 +220,7 @@
     </div>
 
     <div class="detail hidden" data-id="d2" data-c="var(--pink-d)" data-title="さんぽ" data-num="STEP 02">
-      <div class="dhero"><image-slot id="sp-sanpo" shape="rect" placeholder="キャットストリートの写真"></image-slot><div class="scrim"></div><div class="time">12:15</div></div>
+      <div class="dhero"><div class="band"></div><img class="photo" src="uploads/index_im09-95812bb3.jpg" alt=""><div class="time">12:15</div></div>
       <div class="dbody"><h2>渋谷・原宿さんぽ</h2><div class="dmeta">渋谷→原宿・キャットストリート経由・所要 約45分</div>
         <p>腹ごしらえのあとは、渋谷から原宿へゆっくり歩く。おしゃれなショップが並ぶキャットストリートを北へ。ウインドウショッピングは"見るだけ"でも楽しい。裏路地の雑貨屋さんをのぞいたり、写真を撮ったり。日ざしが強い時間帯なので、日陰を選びながら、こまめに水分補給を。</p>
         <div class="tags"><span class="tag c">徒歩さんぽ</span><span class="tag">日陰を選んで</span><span class="tag warn">水分補給を忘れずに</span></div>
@@ -210,7 +229,7 @@
     </div>
 
     <div class="detail hidden" data-id="d3" data-c="var(--grass)" data-title="明治神宮" data-num="STEP 03">
-      <div class="dhero"><image-slot id="sp-jingu" shape="rect" placeholder="明治神宮の写真"></image-slot><div class="scrim"></div><div class="time">13:00</div></div>
+      <div class="dhero"><div class="band"></div><img class="photo" src="uploads/index_im05-30ef6d86.jpg" alt=""><div class="time">13:00</div></div>
       <div class="dbody"><h2>明治神宮で森林浴＆お参り</h2><div class="dmeta">南参道〜本殿・所要 約70分／入苑無料（御苑は有料）</div>
         <p>都心とは思えない広大な鎮守の森。玉砂利の参道は木々に覆われ、真夏でも体感温度がぐっと下がる。大鳥居をくぐって本殿へお参り。神宮の開閉門は日の出・日の入りに合わせて毎月変わり、8月はおおむね早朝〜18時台まで開いている。人の流れもゆるやかで、静かに歩けるのがうれしいポイント。</p>
         <div class="rain"><div class="rt">☔ 雨の日プラン</div><p>雨で森林浴ができないときは、原宿の<b>サモエドカフェ moffu 原宿店</b>へ！ふわふわの白い天使サモエドたちと、冷房のきいた屋内でのんびりふれあえる。マンマルのサモエドスマイルに癒やされるこの日いちばんの"きゅん"タイム。土日祝 10:00〜20:00（最終入店19:00）・1時間制・料金は¥4,600前後／人。人気店なので必ず事前予約を。<br><a href="https://www.google.com/maps/search/?api=1&query=サモエドカフェ moffu 原宿" target="_blank" rel="noopener" style="color:#2f6fd0;font-weight:700;">📍 Googleマップ</a> ／ <a href="https://samoyedmoffu.com/shop_harajyuku" target="_blank" rel="noopener" style="color:#2f9550;font-weight:700;">🌐 公式サイト</a></p></div>
@@ -220,7 +239,7 @@
     </div>
 
     <div class="detail hidden" data-id="d4" data-c="var(--sky-d)" data-title="カフェ休憩" data-num="STEP 04">
-      <div class="dhero"><image-slot id="sp-sbux" shape="rect" placeholder="スタバ／おもはらの森の写真"></image-slot><div class="scrim"></div><div class="time">14:30</div></div>
+      <div class="dhero"><div class="band"></div><img class="photo" src="uploads/index_im08-72e03a90.jpg" alt=""><div class="time">14:30</div></div>
       <div class="dbody"><h2>カフェ休憩｜スターバックス 東急プラザ表参道原宿店</h2><div class="dmeta">神宮前・原宿駅すぐ（東急プラザ オモカド）・所要 約45分</div>
         <p>明治神宮のあとは、原宿駅前の東急プラザ「オモカド」へ。屋上テラス庭園「おもはらの森」に面したスターバックスで、冷たいドリンクとスイーツをシェア。緑に囲まれた開放的な空間で、歩き疲れた足をしっかり休められる。冷房もきいていて、真夏の午後のクールダウンにぴったり。</p>
         <div class="tags"><span class="tag c">¥600-900／人</span><span class="tag">冷房・テラス</span><span class="tag warn">土日は混みやすい</span></div>
@@ -229,7 +248,7 @@
     </div>
 
     <div class="detail hidden" data-id="d6" data-c="var(--pink-d)" data-title="岡本太郎記念館" data-num="STEP 05">
-      <div class="dhero"><image-slot id="sp-taro" shape="rect" placeholder="岡本太郎記念館の写真"></image-slot><div class="scrim"></div><div class="time">15:45</div></div>
+      <div class="dhero"><div class="band"></div><img class="photo" src="uploads/index_im05-30ef6d86.jpg" alt=""><div class="time">15:45</div></div>
       <div class="dbody"><h2>岡本太郎記念館でひと涼み＆アート鑑賞 🎨</h2><div class="dmeta">南青山・表参道駅 徒歩約8分・スタバから徒歩約12分・所要 約60分／開館 10:00〜18:00（最終入館17:30）・火曜休</div>
         <p>午後いちばん暑い時間は、南青山の<b>岡本太郎記念館</b>で涼みながらアートさんぽ。芸術家・岡本太郎が長年アトリエ兼住居として使った空間で、色鮮やかな作品や不思議なオブジェがぎゅっと詰まっている。緑に囲まれた小さな庭にもユニークな彫刻が点在。冷房の効いた静かな館内は、人混みが苦手な彼女もマイペースにまわれる、真夏にうれしい避暑スポット。動線的にも夕食の青山までそのまま徒歩圏。</p>
         <div class="tags"><span class="tag c">入館 ¥650／人</span><span class="tag">冷房完備・静かな屋内</span><span class="tag warn">火曜休館・要確認</span></div>
@@ -238,7 +257,7 @@
     </div>
 
     <div class="detail hidden" data-id="d7" data-c="var(--gold)" data-title="夕食" data-num="STEP 06">
-      <div class="dhero"><image-slot id="sp-torafuku" shape="rect" placeholder="寅福のごはん・料理の写真"></image-slot><div class="scrim"></div><div class="time">18:00</div></div>
+      <div class="dhero"><div class="band"></div><img class="photo" src="uploads/index_im06-d45fb36b.jpg" alt=""><div class="time">18:00</div></div>
       <div class="dbody"><h2>夕食｜寅福 青山本店で和食</h2><div class="dmeta">表参道駅 徒歩3分・岡本太郎記念館から徒歩約8分・所要 約90分</div>
         <p>アート鑑賞のあとはそのまま青山へ。表参道駅すぐの和食店<b>寅福（とらふく）青山本店</b>でディナー。大きなかまどで炊いた炊きたてごはんが名物で、白米・雑穀・季節の炊き込みから選べておかわり自由。旬の小鉢や、和風生姜焼き・銀だら西京焼きなどの一品を組み合わせて、自分好みの定食に。落ち着いた雰囲気でコスパもよく、花火前の早めの時間なら入りやすい。</p>
         <div class="tags"><span class="tag c">¥2,000-3,000／人</span><span class="tag">表参道駅すぐ</span><span class="tag warn">花火前は混雑、早め入店が◎</span></div>
@@ -247,7 +266,7 @@
     </div>
 
     <div class="detail hidden" data-id="d8" data-c="var(--purple)" data-title="花火大会" data-num="FINALE">
-      <div class="dhero"><image-slot id="sp-hanabi" shape="rect" placeholder="神宮外苑の花火の写真"></image-slot><div class="scrim"></div><div class="time">19:30</div></div>
+      <div class="dhero"><div class="band"></div><img class="photo" src="uploads/index_im03-493d1e89.jpg" alt=""><div class="time">19:30</div></div>
       <div class="dbody"><h2>神宮外苑花火大会で夏の締め 🎆</h2><div class="dmeta">神宮外苑周辺（青山）・寅福から徒歩15〜20分・所要 約90分</div>
         <p>一日の締めは、夕食のお店から徒歩圏の<b>神宮外苑花火大会</b>へ。真夏の夜空に大輪の花火が次々と打ち上がる、都心ならではのロマンチックな花火大会。ゆったり食事をしたあと、青山通り沿いの見やすい場所を探して、二人で夜空を見上げよう。夜風にあたりながらの花火は、きっと忘れられない一日のフィナーレに。</p>
         <div class="rain"><div class="rt">ℹ️ 日程・チケットの注意</div><p>神宮外苑花火大会は例年8月開催ですが、<b>2026年の開催日・時間・有料席の有無は必ず公式発表でご確認を。</b>もしで8/8に花火がない場合は、外苑や青山で夜のおさんぽ・カフェに切り替えても◎。有料観覧席は早めに完売することが多いので、行くなら早めのチケット手配が安心。</p></div>
@@ -386,8 +405,8 @@
   document.getElementById('back').addEventListener('click',close);
   document.getElementById('checklist').addEventListener('click',function(e){ var r=e.target.closest('.check'); if(r) r.classList.toggle('on'); });
 </script>
-<script src="image-slot.js"></script>
 </body>
 </html>
+
 
 
