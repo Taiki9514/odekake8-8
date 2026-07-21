@@ -26,14 +26,14 @@
   #home::before{ content:''; position:fixed; inset:0; max-width:520px; left:50%; transform:translateX(-50%); z-index:0; pointer-events:none;
     background-image:radial-gradient(circle, rgba(155,111,214,.1) 1.4px, transparent 2px); background-size:22px 22px; }
   .hero{
-    position:relative; z-index:1; padding:20px 20px 66px; text-align:center; color:#fff; overflow:hidden;
+    position:relative; z-index:1; padding:22px 20px 66px; text-align:center; color:#fff; overflow:hidden;
     background:linear-gradient(160deg,var(--sky) 0%, var(--purple) 118%);
     border-radius:0 0 32px 32px;
   }
   .hero::before{ content:''; position:absolute; left:-10%; right:-10%; bottom:-4px; height:34px; background:var(--grass);
     border-radius:50% 50% 0 0 / 100% 100% 0 0; box-shadow:0 -6px 0 var(--grass-d) inset; }
   .hero::after{ content:''; position:absolute; inset:0; background:repeating-linear-gradient(105deg, rgba(255,255,255,.1) 0 12px, transparent 12px 40px); pointer-events:none; }
-  .mascot-hero{ width:104px; position:relative; z-index:2; filter:drop-shadow(0 5px 7px rgba(40,60,110,.28)); margin-bottom:2px; }
+  .banner{ width:84%; max-width:320px; border-radius:16px; position:relative; z-index:2; margin-bottom:8px; background:#fff; padding:8px; box-shadow:0 8px 16px -6px rgba(40,60,110,.5); }
   .ribbon{ display:inline-block; font-family:'Mochiy Pop One',sans-serif; font-size:11px; letter-spacing:.14em; background:#fff; color:var(--pink-d); padding:5px 16px; border-radius:999px; box-shadow:0 3px 0 rgba(60,60,120,.15); position:relative; z-index:2; }
   .hero h1{ font-family:'Mochiy Pop One',sans-serif; font-weight:400; font-size:26px; line-height:1.42; margin:12px 0 4px; position:relative; z-index:2; text-shadow:0 3px 0 rgba(80,60,150,.4); }
   .hero .date{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:15px; letter-spacing:.06em; position:relative; z-index:2; }
@@ -44,11 +44,14 @@
   .sect-t{ font-family:'Mochiy Pop One',sans-serif; font-size:14px; color:var(--purple); display:flex; align-items:center; gap:8px; margin:0 4px 12px; }
   .sect-t .cb{ width:20px; height:20px; }
 
-  .btn{ position:relative; z-index:1; display:grid; grid-template-columns:58px 1fr 20px; align-items:center; gap:12px; width:100%; text-align:left; border:2.5px solid #fff; cursor:pointer; margin-bottom:11px; background:#fff; border-radius:20px; padding:11px 14px; box-shadow:0 5px 0 var(--sh), 0 10px 18px -12px rgba(60,80,150,.5); transition:transform .12s, box-shadow .12s; font-family:inherit; color:var(--ink); }
+  .btn{ position:relative; z-index:1; display:grid; grid-template-columns:64px 1fr 18px; align-items:center; gap:12px; width:100%; text-align:left; border:2.5px solid #fff; cursor:pointer; margin-bottom:11px; background:#fff; border-radius:20px; padding:11px 14px; box-shadow:0 5px 0 var(--sh), 0 10px 18px -12px rgba(60,80,150,.5); transition:transform .12s, box-shadow .12s; font-family:inherit; color:var(--ink); }
   .btn:active{ transform:translateY(4px); box-shadow:0 1px 0 var(--sh); }
-  .btn .tp{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:15px; color:#fff; background:var(--c); border-radius:13px; height:44px; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 -3px 0 rgba(0,0,0,.14); }
-  .btn .bt{ font-weight:700; font-size:15.5px; line-height:1.3; }
-  .btn .bs{ font-size:11.5px; color:var(--sub); margin-top:2px; }
+  .btn .thumb{ position:relative; width:64px; height:64px; border-radius:16px; overflow:hidden; background:color-mix(in srgb, var(--c) 22%, #fff); box-shadow:inset 0 0 0 2px #fff, 0 4px 10px -5px rgba(60,80,150,.55); }
+  .btn .thumb image-slot{ position:absolute; inset:0; width:100%; height:100%; }
+  .btn .txt{ min-width:0; }
+  .btn .tp{ display:inline-block; font-family:'Fredoka',sans-serif; font-weight:700; font-size:12px; color:#fff; background:var(--c); border-radius:8px; padding:2px 10px; margin-bottom:5px; box-shadow:inset 0 -2px 0 rgba(0,0,0,.14); }
+  .btn .bt{ display:block; font-weight:700; font-size:15.5px; line-height:1.3; }
+  .btn .bs{ display:block; font-size:11.5px; color:var(--sub); margin-top:2px; }
   .btn .ar{ color:var(--c); font-size:18px; font-weight:900; }
 
   .utils{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; padding:6px 18px 30px; position:relative; z-index:1; }
@@ -67,11 +70,12 @@
   .bar .bnum{ margin-left:auto; font-family:'Fredoka',sans-serif; font-weight:700; opacity:.9; font-size:14px; }
   .scroll{ flex:1 1 auto; overflow-y:auto; -webkit-overflow-scrolling:touch; }
 
-  .dhero{ position:relative; height:200px; background:linear-gradient(160deg, var(--c), color-mix(in srgb, var(--c) 55%, #2a2450)); display:flex; align-items:flex-end; justify-content:center; overflow:hidden; }
-  .dhero::after{ content:''; position:absolute; left:-6%; right:-6%; bottom:-4px; height:26px; background:var(--cream); border-radius:50% 50% 0 0/100% 100% 0 0; }
-  .dhero .band{ position:absolute; inset:0; background:repeating-linear-gradient(-25deg, rgba(255,255,255,.12) 0 14px, transparent 14px 40px); }
-  .dhero .mascot{ width:138px; position:relative; z-index:1; margin-bottom:6px; filter:drop-shadow(0 5px 7px rgba(0,0,0,.2)); }
-  .dhero .time{ position:absolute; left:18px; bottom:18px; z-index:2; font-family:'Fredoka',sans-serif; font-weight:700; font-size:32px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.4); }
+  .dhero{ position:relative; height:220px; overflow:hidden; background:color-mix(in srgb, var(--c) 32%, #2a2450); }
+  .dhero::after{ content:''; position:absolute; left:-6%; right:-6%; bottom:-4px; height:26px; background:var(--cream); border-radius:50% 50% 0 0/100% 100% 0 0; z-index:3; pointer-events:none; }
+  .dhero image-slot{ position:absolute; inset:0; width:100%; height:100%; }
+  .dhero .scrim{ position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg, rgba(0,0,0,.18) 0%, transparent 26%, transparent 52%, rgba(0,0,0,.5) 100%); }
+  .dhero .photo{ max-height:150px; max-width:72%; object-fit:contain; position:relative; z-index:1; margin-bottom:14px; border-radius:10px; background:#fff; padding:6px; box-shadow:0 8px 16px -5px rgba(0,0,0,.35); transform:rotate(-2deg); }
+  .dhero .time{ position:absolute; left:18px; bottom:16px; z-index:4; font-family:'Fredoka',sans-serif; font-weight:700; font-size:30px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.5); }
   .dbody{ padding:22px 20px 60px; }
   .dbody h2{ font-family:'Mochiy Pop One',sans-serif; font-weight:400; font-size:22px; line-height:1.42; margin:0 0 6px; }
   .dmeta{ font-size:12.5px; color:var(--sub); margin-bottom:16px; }
@@ -87,6 +91,7 @@
   .btot{ display:flex; justify-content:space-between; align-items:center; margin-top:18px; padding:16px 18px; border-radius:18px; background:linear-gradient(135deg,var(--grass),var(--grass-d)); color:#fff; box-shadow:0 6px 0 rgba(30,120,70,.3); }
   .btot b{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:24px; color:var(--gold); }
   .note{ margin-top:16px; font-size:12px; color:var(--sub); line-height:1.75; }
+  .deco{ display:block; margin:0 auto 6px; max-height:110px; border-radius:12px; background:#fff; padding:6px; box-shadow:0 6px 12px -5px rgba(0,0,0,.25); }
 
   .check{ display:flex; align-items:center; gap:13px; padding:15px 16px; background:#fff; border:2px solid var(--line); border-radius:16px; margin-bottom:10px; cursor:pointer; user-select:none; box-shadow:0 3px 0 var(--line); }
   .check .box{ width:26px; height:26px; border-radius:9px; border:2.5px solid #cdccdf; background:#f8f8fd; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:900; color:#fff; flex:0 0 auto; }
@@ -107,7 +112,8 @@
   .lnk{ display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; padding:11px 15px; border-radius:14px; text-decoration:none; box-shadow:0 3px 0 rgba(0,0,0,.06); transition:transform .1s; }
   .lnk:active{ transform:translateY(2px); box-shadow:none; }
   .lnk.map{ background:#eaf2ff; color:#2f6fd0; border:1.5px solid #cfe0f8; }
-  .lnk.ext{ background:#fff1f6; color:#e0558a; border:1.5px solid #f6d3e2; }
+  .lnk.ig{ background:linear-gradient(135deg,#feda75,#d62976 45%,#962fbf 80%,#4f5bd5); color:#fff; border:none; }
+  .lnk.web{ background:#eef6ef; color:#2f9550; border:1.5px solid #cfe8d6; }
   .lnk .ico{ font-size:15px; line-height:1; }
   /* map */
   .mapwrap{ padding:20px 16px 8px; }
@@ -120,91 +126,39 @@
 </head>
 <body>
 
-<!-- reusable mascot: original horse-girl idol character -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<g id="peko">
-  <!-- twin-tail hair behind -->
-  <path d="M40 92 q-26 46 -12 96 q20 -6 26 -32 q-10 -32 6 -58z" fill="#8f6ad0"/>
-  <path d="M160 92 q26 46 12 96 q-20 -6 -26 -32 q10 -32 -6 -58z" fill="#8f6ad0"/>
-  <!-- hair ribbons -->
-  <circle cx="30" cy="150" r="11" fill="var(--pink)"/>
-  <circle cx="170" cy="150" r="11" fill="var(--pink)"/>
-  <!-- collar -->
-  <path d="M52 150 q48 34 96 0 l-6 40 -84 0 z" fill="#fff"/>
-  <path d="M74 158 l26 30 26-30 -12 40 -28 0z" fill="var(--sky)"/>
-  <!-- neck -->
-  <rect x="88" y="132" width="24" height="20" fill="#ffe4cf"/>
-  <!-- horse ears -->
-  <path d="M48 60 q-12 -36 6 -50 q18 8 22 38z" fill="#a984e0"/>
-  <path d="M55 58 q-5 -26 6 -37 q9 8 11 29z" fill="#ffd9e6"/>
-  <path d="M152 60 q12 -36 -6 -50 q-18 8 -22 38z" fill="#a984e0"/>
-  <path d="M145 58 q5 -26 -6 -37 q-9 8 -11 29z" fill="#ffd9e6"/>
-  <!-- hair back -->
-  <path d="M46 96 q-8 60 26 74 q28 12 56 0 q34 -14 26 -74 q-4 -66 -54 -66 q-50 0 -54 66z" fill="#9b6fd6"/>
-  <!-- face -->
-  <ellipse cx="100" cy="96" rx="50" ry="52" fill="#ffeede"/>
-  <!-- bangs -->
-  <path d="M50 86 q2 -54 50 -54 q48 0 50 54 q-18 -22 -32 -15 q-4 -19 -18 -19 q-14 0 -18 19 q-14 -7 -32 15z" fill="#b083e6"/>
-  <path d="M48 88 q11 -15 24 -13 l-7 24 q-13 2 -17 -11z" fill="#b083e6"/>
-  <path d="M152 88 q-11 -15 -24 -13 l7 24 q13 2 17 -11z" fill="#b083e6"/>
-  <!-- side hair flips -->
-  <path d="M48 96 q-18 8 -16 30 q11 -7 20 -12z" fill="#9b6fd6"/>
-  <path d="M152 96 q18 8 16 30 q-11 -7 -20 -12z" fill="#9b6fd6"/>
-  <!-- cheeks -->
-  <circle cx="70" cy="108" r="11" fill="#ffb0c9" opacity=".85"/>
-  <circle cx="130" cy="108" r="11" fill="#ffb0c9" opacity=".85"/>
-  <!-- big idol eyes -->
-  <ellipse cx="80" cy="94" rx="10" ry="13" fill="#fff"/>
-  <ellipse cx="120" cy="94" rx="10" ry="13" fill="#fff"/>
-  <ellipse cx="80" cy="95" rx="8" ry="11" fill="#4aa8d6"/>
-  <ellipse cx="120" cy="95" rx="8" ry="11" fill="#4aa8d6"/>
-  <circle cx="80" cy="98" r="4.6" fill="#243a66"/>
-  <circle cx="120" cy="98" r="4.6" fill="#243a66"/>
-  <circle cx="83" cy="89" r="3.6" fill="#fff"/>
-  <circle cx="123" cy="89" r="3.6" fill="#fff"/>
-  <!-- brows -->
-  <path d="M70 76 q10 -6 20 -1" stroke="#9a6fd0" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M110 75 q10 -5 20 1" stroke="#9a6fd0" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <!-- smile -->
-  <path d="M86 118 q14 11 28 0" stroke="#d0668a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-  <!-- star cheek deco -->
-  <path d="M138 118 l2.2 4.4 4.8 .5-3.5 3.4 .9 4.8-4.4-2.4-4.4 2.4 .9-4.8-3.5-3.4 4.8-.5z" fill="var(--gold)"/>
-</g>
-</defs></svg>
-
 <!-- ================= HOME ================= -->
 <main id="home">
   <div class="hero">
-    <svg class="mascot-hero" viewBox="0 0 200 200"><use href="#peko"/></svg>
+    <img class="banner" src="uploads/index_im01.gif" alt="">
     <div><span class="ribbon">★ OUR DAY OUT ★</span></div>
-    <h1>森と夕景の<br>夏さんぽ♪</h1>
+    <h1>渋谷＆原宿<br>なつやすみ さんぽ♪</h1>
     <div class="date">2026 . 08 . 08 &nbsp;SAT</div>
     <div class="stats">
-      <span class="stat">原宿→新宿</span>
-      <span class="stat">10:30-20:00</span>
-      <span class="stat">目安 ¥6,500</span>
+      <span class="stat">渋谷→原宿→青山</span>
+      <span class="stat">10:45-20:00 ゆったり</span>
+      <span class="stat">目安 ¥5,550</span>
     </div>
   </div>
 
   <div class="sect">
     <div class="sect-t"><svg class="cb" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z" fill="var(--gold)"/></svg>きょうのスケジュール</div>
 
-    <button class="btn" data-open="d1" style="--c:var(--pink-d); --sh:#f8d6e4;">
-      <span class="tp">10:30</span><span><span class="bt">集合｜原宿駅</span><span class="bs">表参道口・徒歩2分</span></span><span class="ar">›</span></button>
-    <button class="btn" data-open="d2" style="--c:var(--grass); --sh:#cdead6;">
-      <span class="tp">10:40</span><span><span class="bt">明治神宮で森林浴</span><span class="bs">入苑無料・約70分</span></span><span class="ar">›</span></button>
-    <button class="btn" data-open="d3" style="--c:var(--gold); --sh:#f6e6b8;">
-      <span class="tp">12:00</span><span><span class="bt">ランチ｜JB's TOKYO 🍔</span><span class="bs">名物・四角いバーガー</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d0" style="--c:var(--sky); --sh:#cbe6f5;">
+      <span class="thumb"><image-slot id="sp-shibuya" shape="rect"></image-slot></span><span class="txt"><span class="tp">10:45</span><span class="bt">集合｜渋谷駅</span><span class="bs">ハチ公口で待ち合わせ</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d1" style="--c:var(--gold); --sh:#f6e6b8;">
+      <span class="thumb"><image-slot id="sp-jbs" shape="rect"></image-slot></span><span class="txt"><span class="tp">11:00</span><span class="bt">ランチ｜JB's TOKYO ミヤシタパーク店 🍔</span><span class="bs">渋谷・名物 四角いバーガー</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d2" style="--c:var(--pink-d); --sh:#f8d6e4;">
+      <span class="thumb"><image-slot id="sp-sanpo" shape="rect"></image-slot></span><span class="txt"><span class="tp">12:15</span><span class="bt">渋谷・原宿さんぽ</span><span class="bs">キャットストリートを北へ</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d3" style="--c:var(--grass); --sh:#cdead6;">
+      <span class="thumb"><image-slot id="sp-jingu" shape="rect"></image-slot></span><span class="txt"><span class="tp">13:00</span><span class="bt">明治神宮で森林浴</span><span class="bs">入苑無料・木陰で涼しい</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d4" style="--c:var(--sky-d); --sh:#cbe6f5;">
-      <span class="tp">13:15</span><span><span class="bt">太田記念美術館</span><span class="bs">浮世絵・涼しい屋内</span></span><span class="ar">›</span></button>
-    <button class="btn" data-open="d5" style="--c:var(--pink-d); --sh:#f8d6e4;">
-      <span class="tp">14:45</span><span><span class="bt">表参道さんぽ＆カフェ</span><span class="bs">並木道・ひと休み</span></span><span class="ar">›</span></button>
-    <button class="btn" data-open="d6" style="--c:var(--grass); --sh:#cdead6;">
-      <span class="tp">16:30</span><span><span class="bt">代々木公園でひとやすみ</span><span class="bs">入園無料・夕方は涼しい</span></span><span class="ar">›</span></button>
+      <span class="thumb"><image-slot id="sp-sbux" shape="rect"></image-slot></span><span class="txt"><span class="tp">14:30</span><span class="bt">カフェ休憩｜スタバ 東急プラザ</span><span class="bs">表参道原宿・おもはらの森</span></span><span class="ar">›</span></button>
+    <button class="btn" data-open="d6" style="--c:var(--pink-d); --sh:#f8d6e4;">
+      <span class="thumb"><image-slot id="sp-taro" shape="rect"></image-slot></span><span class="txt"><span class="tp">15:45</span><span class="bt">岡本太郎記念館 🎨</span><span class="bs">南青山・涼しい屋内でアート鑑賞</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d7" style="--c:var(--gold); --sh:#f6e6b8;">
-      <span class="tp">17:30</span><span><span class="bt">早め夕食｜bills 表参道</span><span class="bs">おしゃれディナー・徒歩すぐ</span></span><span class="ar">›</span></button>
+      <span class="thumb"><image-slot id="sp-torafuku" shape="rect"></image-slot></span><span class="txt"><span class="tp">18:00</span><span class="bt">夕食｜寅福 青山本店</span><span class="bs">和食・表参道駅すぐ</span></span><span class="ar">›</span></button>
     <button class="btn" data-open="d8" style="--c:var(--purple); --sh:#e2d4f5;">
-      <span class="tp">19:15</span><span><span class="bt">締め｜都庁展望室で夜景</span><span class="bs">地上202m・入場無料</span></span><span class="ar">›</span></button>
+      <span class="thumb"><image-slot id="sp-hanabi" shape="rect"></image-slot></span><span class="txt"><span class="tp">19:30</span><span class="bt">神宮外苑花火大会 🎆</span><span class="bs">夕食から徒歩で夏の締め</span></span><span class="ar">›</span></button>
   </div>
 
   <div class="sect" style="padding-bottom:2px;">
@@ -216,7 +170,7 @@
     <button class="util" data-open="daccess" style="--c:var(--sky-d); --sh:#cbe6f5;"><div class="ic">🚃</div><div class="ut">アクセス</div></button>
     <button class="util" data-open="dmap" style="--c:var(--purple); --sh:#e2d4f5;"><div class="ic">🗺️</div><div class="ut">地図</div></button>
   </div>
-  <div class="foot">プランは目安です ・ 当日の体調・天候にあわせて自由にどうぞ ✿</div>
+  <div class="foot">プランは目安です ・ 当日の体調・天候にあわせて自由にどうぞ ✿<br>営業時間・料金は変わることがあるので、各公式サイトで最新をご確認を。</div>
 </main>
 
 <!-- ================= DETAIL ================= -->
@@ -228,96 +182,99 @@
   </div>
   <div class="scroll" id="scroll">
 
-    <div class="detail hidden" data-id="d1" data-c="var(--pink-d)" data-title="集合" data-num="STEP 01">
-      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">10:30</div></div>
-      <div class="dbody"><h2>集合｜原宿駅・表参道口</h2><div class="dmeta">JR山手線／東京メトロ 明治神宮前〈原宿〉駅</div>
-        <p>まずは待ち合わせ。原宿駅は表参道口が分かりやすい。少し早く着いたら駅前の日陰で涼みながら待つのも◎。改札を出たら、明治神宮の入口（南参道）まで徒歩1〜2分。ここからさんぽスタート！</p>
-        <div class="tags"><span class="tag c">移動 徒歩2分</span><span class="tag">水分を買っておくと◎</span></div>
-        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E5%AE%BF%E9%A7%85%E8%A1%A8%E5%8F%82%E9%81%93%E5%8F%A3"><span class="ico">📍</span>Googleマップで開く</a></div>
+    <div class="detail hidden" data-id="d0" data-c="var(--sky)" data-title="集合" data-num="START">
+      <div class="dhero"><image-slot id="sp-shibuya" shape="rect" placeholder="渋谷駅・ハチ公前の写真"></image-slot><div class="scrim"></div><div class="time">10:45</div></div>
+      <div class="dbody"><h2>集合｜渋谷駅・ハチ公口</h2><div class="dmeta">JR・各線 渋谷駅・ハチ公口前（忠犬ハチ公像）</div>
+        <p>今日のスタートは渋谷・ハチ公前で待ち合わせ。定番の目印なので迷いにくい。少し早く着いたら、駅周辺の日陰で涼みながら。このあとはミヤシタパークまで徒歩すぐなので、まずはおしゃべりしながらウォーミングアップ。</p>
+        <div class="tags"><span class="tag c">10:45集合</span><span class="tag">ハチ公前</span></div>
+        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=渋谷駅 ハチ公像"><span class="ico">📍</span>Googleマップ</a></div>
       </div>
     </div>
 
-    <div class="detail hidden" data-id="d2" data-c="var(--grass)" data-title="明治神宮" data-num="STEP 02">
-      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">10:40</div></div>
-      <div class="dbody"><h2>明治神宮で森林浴＆お参り</h2><div class="dmeta">南参道〜本殿・所要 約70分／入苑無料</div>
-        <p>都心とは思えない広大な鎮守の森。玉砂利の参道は木々に覆われ、真夏でも体感温度がぐっと下がる。大鳥居をくぐって本殿へお参り、清正井（きよまさのいど）まで足をのばすのも気持ちいい。人の流れもゆるやかで、静かに歩けるのがうれしいポイント。</p>
-        <div class="rain"><div class="rt">☔ 雨の日プラン</div><p>雨のときは森林浴はおやすみして、原宿にある<b>動物カフェ</b>へ。うさぎ・ハリネズミ・小動物などとふれあえる屋内スポットで、濡れずにのんびり。予約制のお店が多いので、当日朝に空き状況をチェックしておくと安心（入店料の目安 ¥1,000〜1,500／人・ワンドリンク制のことも）。</p></div>
-        <div class="tags"><span class="tag free">入苑無料</span><span class="tag c">木陰で涼しい</span><span class="tag warn">開門時間は当日確認</span></div>
-        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE"><span class="ico">📍</span>Googleマップで開く</a><a class="lnk ext" target="_blank" rel="noopener" href="https://www.meijijingu.or.jp/"><span class="ico">🌐</span>公式サイト</a></div>
+    <div class="detail hidden" data-id="d1" data-c="var(--gold)" data-title="ランチ" data-num="STEP 01">
+      <div class="dhero"><image-slot id="sp-jbs" shape="rect" placeholder="JB's の四角いバーガーの写真"></image-slot><div class="scrim"></div><div class="time">11:00</div></div>
+      <div class="dbody"><h2>ランチ｜JB's TOKYO ミヤシタパーク店 🍔</h2><div class="dmeta">渋谷 MIYASHITA PARK South 2F・渋谷駅 徒歩3分／営業 11:00〜21:00（L.O.20:30）</div>
+        <p>まずは今日いちばんのお楽しみから！名物の"四角いバーガー"。北海道産小麦の自家製食パンバンズに、注文ごとに焼くスマッシュパティ。ソースまで100％手づくりで、シンプルな「ハンバーガー」はワンコインクラスから。渋谷のミヤシタパーク内で席数もあり、スタートにぴったり。開店の11:00ごろは比較的スムーズ。腹ごしらえしたら、原宿方面へ歩き出そう。</p>
+        <div class="tags"><span class="tag c">¥800-1,200／人</span><span class="tag">11:00〜21:00</span><span class="tag warn">昼どきは混みやすい</span></div>
+        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=JB's TOKYO ミヤシタパーク"><span class="ico">📍</span>Googleマップ</a><a class="lnk ig" target="_blank" rel="noopener" href="https://www.instagram.com/jbstokyo/"><span class="ico">📷</span>Instagram</a><a class="lnk web" target="_blank" rel="noopener" href="https://www.jbs-burger.tokyo/home"><span class="ico">🌐</span>公式サイト</a></div>
       </div>
     </div>
 
-    <div class="detail hidden" data-id="d3" data-c="var(--gold)" data-title="ランチ" data-num="STEP 03">
-      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">12:00</div></div>
-      <div class="dbody"><h2>ランチ｜JB's TOKYO 渋谷店 🍔</h2><div class="dmeta">渋谷・原宿から徒歩15分ほど（JR1駅）・所要 約60分</div>
-        <p>今日いちばんのお楽しみ、名物の"四角いバーガー"！北海道産小麦の自家製食パンバンズに、注文ごとに焼くスマッシュパティ。ソースまで100％手づくりで、シンプルな「100％バーガー」はワンコインから。同じ系列の渋谷店なら席数もあり、原宿からのアクセスも◎。人気店なので少し早めの到着がおすすめ。</p>
-        <div class="tags"><span class="tag c">¥800-1,200／人</span><span class="tag">11:00 open</span><span class="tag warn">早めが安心</span></div>
-        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=JB's%20TOKYO%20%E6%B8%8B%E8%B0%B7"><span class="ico">📍</span>Googleマップで開く</a><a class="lnk ext" target="_blank" rel="noopener" href="https://tabelog.com/rstLst/?sw=JB%27s%20TOKYO%20%E6%B8%8B%E8%B0%B7"><span class="ico">🍽️</span>食べログで見る</a></div>
+    <div class="detail hidden" data-id="d2" data-c="var(--pink-d)" data-title="さんぽ" data-num="STEP 02">
+      <div class="dhero"><image-slot id="sp-sanpo" shape="rect" placeholder="キャットストリートの写真"></image-slot><div class="scrim"></div><div class="time">12:15</div></div>
+      <div class="dbody"><h2>渋谷・原宿さんぽ</h2><div class="dmeta">渋谷→原宿・キャットストリート経由・所要 約45分</div>
+        <p>腹ごしらえのあとは、渋谷から原宿へゆっくり歩く。おしゃれなショップが並ぶキャットストリートを北へ。ウインドウショッピングは"見るだけ"でも楽しい。裏路地の雑貨屋さんをのぞいたり、写真を撮ったり。日ざしが強い時間帯なので、日陰を選びながら、こまめに水分補給を。</p>
+        <div class="tags"><span class="tag c">徒歩さんぽ</span><span class="tag">日陰を選んで</span><span class="tag warn">水分補給を忘れずに</span></div>
+        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=キャットストリート 原宿"><span class="ico">📍</span>Googleマップ</a><a class="lnk ig" target="_blank" rel="noopener" href="https://www.instagram.com/explore/search/keyword/?q=キャットストリート"><span class="ico">📷</span>Instagram</a><a class="lnk web" target="_blank" rel="noopener" href="https://omotesando.or.jp/"><span class="ico">🌐</span>エリア情報</a></div>
       </div>
     </div>
 
-    <div class="detail hidden" data-id="d4" data-c="var(--sky-d)" data-title="美術館" data-num="STEP 04">
-      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">13:15</div></div>
-      <div class="dbody"><h2>太田記念美術館で浮世絵さんぽ</h2><div class="dmeta">原宿・所要 約75分／一番暑い時間は屋内で</div>
-        <p>日ざしが強い午後は、静かな美術館でひと休み。世界有数の浮世絵コレクションを、涼しい館内でゆっくり鑑賞。規模はほどよく、混みすぎず、落ち着いて過ごせる。入館料もリーズナブルで、畳のスペースもあり足を休められる。</p>
-        <div class="tags"><span class="tag c">¥800-1,200／人</span><span class="tag">冷房・静か</span><span class="tag warn">会期・料金は事前確認</span></div>
-        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E7%94%B0%E8%A8%98%E5%BF%B5%E7%BE%8E%E8%A1%93%E9%A4%A8"><span class="ico">📍</span>Googleマップで開く</a><a class="lnk ext" target="_blank" rel="noopener" href="http://www.ukiyoe-ota-muse.jp/"><span class="ico">🌐</span>公式サイト</a></div>
+    <div class="detail hidden" data-id="d3" data-c="var(--grass)" data-title="明治神宮" data-num="STEP 03">
+      <div class="dhero"><image-slot id="sp-jingu" shape="rect" placeholder="明治神宮の写真"></image-slot><div class="scrim"></div><div class="time">13:00</div></div>
+      <div class="dbody"><h2>明治神宮で森林浴＆お参り</h2><div class="dmeta">南参道〜本殿・所要 約70分／入苑無料（御苑は有料）</div>
+        <p>都心とは思えない広大な鎮守の森。玉砂利の参道は木々に覆われ、真夏でも体感温度がぐっと下がる。大鳥居をくぐって本殿へお参り。神宮の開閉門は日の出・日の入りに合わせて毎月変わり、8月はおおむね早朝〜18時台まで開いている。人の流れもゆるやかで、静かに歩けるのがうれしいポイント。</p>
+        <div class="rain"><div class="rt">☔ 雨の日プラン</div><p>雨で森林浴ができないときは、原宿の<b>サモエドカフェ moffu 原宿店</b>へ！ふわふわの白い天使サモエドたちと、冷房のきいた屋内でのんびりふれあえる。マンマルのサモエドスマイルに癒やされるこの日いちばんの"きゅん"タイム。土日祝 10:00〜20:00（最終入店19:00）・1時間制・料金は¥4,600前後／人。人気店なので必ず事前予約を。<br><a href="https://www.google.com/maps/search/?api=1&query=サモエドカフェ moffu 原宿" target="_blank" rel="noopener" style="color:#2f6fd0;font-weight:700;">📍 Googleマップ</a> ／ <a href="https://samoyedmoffu.com/shop_harajyuku" target="_blank" rel="noopener" style="color:#2f9550;font-weight:700;">🌐 公式サイト</a></p></div>
+        <div class="tags"><span class="tag free">入苑無料</span><span class="tag c">木陰で涼しい</span><span class="tag warn">開閉門時間は当日確認</span></div>
+        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=明治神宮"><span class="ico">📍</span>Googleマップ</a><a class="lnk ig" target="_blank" rel="noopener" href="https://www.instagram.com/explore/search/keyword/?q=明治神宮"><span class="ico">📷</span>Instagram</a><a class="lnk web" target="_blank" rel="noopener" href="https://www.meijijingu.or.jp/"><span class="ico">🌐</span>公式サイト</a></div>
       </div>
     </div>
 
-    <div class="detail hidden" data-id="d5" data-c="var(--pink-d)" data-title="表参道" data-num="STEP 05">
-      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">14:45</div></div>
-      <div class="dbody"><h2>表参道さんぽ＆カフェ休憩</h2><div class="dmeta">表参道〜裏原宿・所要 約90分</div>
-        <p>けやき並木の表参道をのんびり。ウインドウショッピングは"見るだけ"でも楽しい。裏路地の雑貨屋さんをのぞいたり、冷房のきいたカフェでアイスドリンク＆スイーツをシェア。歩き疲れたら、ここでしっかり座って休憩を。</p>
-        <div class="tags"><span class="tag c">カフェ ¥600-900／人</span><span class="tag">日陰の並木道</span></div>
-        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E8%A1%A8%E5%8F%82%E9%81%93%20%E3%81%91%E3%82%84%E3%81%8D%E4%B8%A6%E6%9C%A8"><span class="ico">📍</span>Googleマップで開く</a><a class="lnk ext" target="_blank" rel="noopener" href="https://omotesando.or.jp/"><span class="ico">🌐</span>表参道情報</a></div>
+    <div class="detail hidden" data-id="d4" data-c="var(--sky-d)" data-title="カフェ休憩" data-num="STEP 04">
+      <div class="dhero"><image-slot id="sp-sbux" shape="rect" placeholder="スタバ／おもはらの森の写真"></image-slot><div class="scrim"></div><div class="time">14:30</div></div>
+      <div class="dbody"><h2>カフェ休憩｜スターバックス 東急プラザ表参道原宿店</h2><div class="dmeta">神宮前・原宿駅すぐ（東急プラザ オモカド）・所要 約45分</div>
+        <p>明治神宮のあとは、原宿駅前の東急プラザ「オモカド」へ。屋上テラス庭園「おもはらの森」に面したスターバックスで、冷たいドリンクとスイーツをシェア。緑に囲まれた開放的な空間で、歩き疲れた足をしっかり休められる。冷房もきいていて、真夏の午後のクールダウンにぴったり。</p>
+        <div class="tags"><span class="tag c">¥600-900／人</span><span class="tag">冷房・テラス</span><span class="tag warn">土日は混みやすい</span></div>
+        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=スターバックス 東急プラザ表参道原宿"><span class="ico">📍</span>Googleマップ</a><a class="lnk ig" target="_blank" rel="noopener" href="https://www.instagram.com/explore/search/keyword/?q=東急プラザ表参道原宿"><span class="ico">📷</span>Instagram</a><a class="lnk web" target="_blank" rel="noopener" href="https://omohara.tokyu-plaza.com/"><span class="ico">🌐</span>公式サイト</a></div>
       </div>
     </div>
 
-    <div class="detail hidden" data-id="d6" data-c="var(--grass)" data-title="代々木公園" data-num="STEP 06">
-      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">16:30</div></div>
-      <div class="dbody"><h2>代々木公園でひとやすみ</h2><div class="dmeta">原宿すぐ・所要 約45分／入園無料</div>
-        <p>夕方は日ざしがやわらぎ、風も出てくる。広い芝生と噴水のある公園で、木陰のベンチにすわってのんびり。少しずつ暮れていく空を眺めながら、今日撮った写真を見返す時間。ここまでの歩き疲れをリセット。</p>
-        <div class="tags"><span class="tag free">入園無料</span><span class="tag c">夕方は涼しい</span></div>
-        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%A3%E3%80%85%E6%9C%A8%E5%85%AC%E5%9C%92"><span class="ico">📍</span>Googleマップで開く</a><a class="lnk ext" target="_blank" rel="noopener" href="https://www.tokyo-park.or.jp/park/yoyogi/"><span class="ico">🌐</span>公式サイト</a></div>
+    <div class="detail hidden" data-id="d6" data-c="var(--pink-d)" data-title="岡本太郎記念館" data-num="STEP 05">
+      <div class="dhero"><image-slot id="sp-taro" shape="rect" placeholder="岡本太郎記念館の写真"></image-slot><div class="scrim"></div><div class="time">15:45</div></div>
+      <div class="dbody"><h2>岡本太郎記念館でひと涼み＆アート鑑賞 🎨</h2><div class="dmeta">南青山・表参道駅 徒歩約8分・スタバから徒歩約12分・所要 約60分／開館 10:00〜18:00（最終入館17:30）・火曜休</div>
+        <p>午後いちばん暑い時間は、南青山の<b>岡本太郎記念館</b>で涼みながらアートさんぽ。芸術家・岡本太郎が長年アトリエ兼住居として使った空間で、色鮮やかな作品や不思議なオブジェがぎゅっと詰まっている。緑に囲まれた小さな庭にもユニークな彫刻が点在。冷房の効いた静かな館内は、人混みが苦手な彼女もマイペースにまわれる、真夏にうれしい避暑スポット。動線的にも夕食の青山までそのまま徒歩圏。</p>
+        <div class="tags"><span class="tag c">入館 ¥650／人</span><span class="tag">冷房完備・静かな屋内</span><span class="tag warn">火曜休館・要確認</span></div>
+        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=岡本太郎記念館"><span class="ico">📍</span>Googleマップ</a></div>
       </div>
     </div>
 
-    <div class="detail hidden" data-id="d7" data-c="var(--gold)" data-title="夕食" data-num="STEP 07">
-      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">17:30</div></div>
-      <div class="dbody"><h2>早め夕食｜bills 表参道でおしゃれディナー</h2><div class="dmeta">表参道・代々木公園から徒歩10分ほど・所要 約90分</div>
-        <p>公園でのんびりしたあとは、そのまま表参道へ。選んだのは東急プラザ表参道にある<b>bills 表参道</b>。大きな窓の開放的な空間で、パンケーキで有名なお店だけど、夕方はパスタ・バーガー・前菜などディナーメニューも充実。混みあう前の早めの時間に入ればゆったり座れる。食後は原宿からJRで一駅、ラストの都庁へ。</p>
-        <div class="tags"><span class="tag c">¥2,000-3,000／人</span><span class="tag">表参道すぐ</span><span class="tag warn">土曜夜は早め入店が◎</span></div>
-        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=bills%20%E8%A1%A8%E5%8F%82%E9%81%93"><span class="ico">📍</span>Googleマップで開く</a><a class="lnk ext" target="_blank" rel="noopener" href="https://tabelog.com/rstLst/?sw=bills%20%E8%A1%A8%E5%8F%82%E9%81%93"><span class="ico">🍽️</span>食べログで見る</a></div>
+    <div class="detail hidden" data-id="d7" data-c="var(--gold)" data-title="夕食" data-num="STEP 06">
+      <div class="dhero"><image-slot id="sp-torafuku" shape="rect" placeholder="寅福のごはん・料理の写真"></image-slot><div class="scrim"></div><div class="time">18:00</div></div>
+      <div class="dbody"><h2>夕食｜寅福 青山本店で和食</h2><div class="dmeta">表参道駅 徒歩3分・岡本太郎記念館から徒歩約8分・所要 約90分</div>
+        <p>アート鑑賞のあとはそのまま青山へ。表参道駅すぐの和食店<b>寅福（とらふく）青山本店</b>でディナー。大きなかまどで炊いた炊きたてごはんが名物で、白米・雑穀・季節の炊き込みから選べておかわり自由。旬の小鉢や、和風生姜焼き・銀だら西京焼きなどの一品を組み合わせて、自分好みの定食に。落ち着いた雰囲気でコスパもよく、花火前の早めの時間なら入りやすい。</p>
+        <div class="tags"><span class="tag c">¥2,000-3,000／人</span><span class="tag">表参道駅すぐ</span><span class="tag warn">花火前は混雑、早め入店が◎</span></div>
+        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=寅福 青山本店"><span class="ico">📍</span>Googleマップ</a><a class="lnk ig" target="_blank" rel="noopener" href="https://www.instagram.com/explore/search/keyword/?q=寅福 青山"><span class="ico">📷</span>Instagram</a><a class="lnk web" target="_blank" rel="noopener" href="https://tabelog.com/tokyo/A1306/A130602/13005250/"><span class="ico">🍽️</span>食べログ</a></div>
       </div>
     </div>
 
-    <div class="detail hidden" data-id="d8" data-c="var(--purple)" data-title="夜景" data-num="STEP 08">
-      <div class="dhero"><div class="band"></div><svg class="mascot" viewBox="0 0 200 200"><use href="#peko"/></svg><div class="time">19:15</div></div>
-      <div class="dbody"><h2>締め｜東京都庁 展望室で夜景</h2><div class="dmeta">新宿・地上202m・所要 約45分／入場無料</div>
-        <p>最後は無料で楽しめる特等席へ。地上202mの展望室から、きらめく東京の夜景を二人で。エレベーターで一気に昇れて、疲れた足にもやさしい。窓ぎわで静かに景色を眺めて、いい時間で解散。今日もおつかれさま！</p>
-        <div class="tags"><span class="tag free">入場無料</span><span class="tag warn">開室日・時間は事前確認</span></div>
-        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%E5%B1%95%E6%9C%9B%E5%AE%A4"><span class="ico">📍</span>Googleマップで開く</a><a class="lnk ext" target="_blank" rel="noopener" href="https://www.yokoso.metro.tokyo.lg.jp/"><span class="ico">🌐</span>公式サイト</a></div>
+    <div class="detail hidden" data-id="d8" data-c="var(--purple)" data-title="花火大会" data-num="FINALE">
+      <div class="dhero"><image-slot id="sp-hanabi" shape="rect" placeholder="神宮外苑の花火の写真"></image-slot><div class="scrim"></div><div class="time">19:30</div></div>
+      <div class="dbody"><h2>神宮外苑花火大会で夏の締め 🎆</h2><div class="dmeta">神宮外苑周辺（青山）・寅福から徒歩15〜20分・所要 約90分</div>
+        <p>一日の締めは、夕食のお店から徒歩圏の<b>神宮外苑花火大会</b>へ。真夏の夜空に大輪の花火が次々と打ち上がる、都心ならではのロマンチックな花火大会。ゆったり食事をしたあと、青山通り沿いの見やすい場所を探して、二人で夜空を見上げよう。夜風にあたりながらの花火は、きっと忘れられない一日のフィナーレに。</p>
+        <div class="rain"><div class="rt">ℹ️ 日程・チケットの注意</div><p>神宮外苑花火大会は例年8月開催ですが、<b>2026年の開催日・時間・有料席の有無は必ず公式発表でご確認を。</b>もしで8/8に花火がない場合は、外苑や青山で夜のおさんぽ・カフェに切り替えても◎。有料観覧席は早めに完売することが多いので、行くなら早めのチケット手配が安心。</p></div>
+        <div class="tags"><span class="tag free">沿道からなら無料</span><span class="tag">夕食から徒歩圏</span><span class="tag warn">開催日・チケット要確認</span></div>
+        <div class="linkrow"><a class="lnk map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=明治神宮外苑 神宮球場"><span class="ico">📍</span>Googleマップ</a></div>
       </div>
     </div>
 
     <div class="detail hidden" data-id="dbudget" data-c="var(--grass)" data-title="予算のめやす" data-num="BUDGET">
       <div class="dbody" style="padding-top:26px;">
-        <div class="brow"><span>明治神宮（入苑）</span><b>¥0</b></div>
+        <img class="deco" src="uploads/index_im03.jpg" alt="">
         <div class="brow"><span>ランチ｜JB's TOKYO</span><b>¥1,000</b></div>
-        <div class="brow"><span>太田記念美術館</span><b>¥1,000</b></div>
-        <div class="brow"><span>カフェ休憩</span><b>¥700</b></div>
-        <div class="brow"><span>代々木公園</span><b>¥0</b></div>
-        <div class="brow"><span>夕食（bills 表参道）</span><b>¥2,500</b></div>
-        <div class="brow"><span>東京都庁 展望室</span><b>¥0</b></div>
-        <div class="brow"><span>交通費（IC）</span><b>¥600</b></div>
-        <div class="btot"><span style="font-weight:700;">合計めやす（1人）</span><b>¥6,500</b></div>
-        <p class="note">※ 無料スポットを多めにした、お財布にやさしいプラン。入館料や飲食は変動するので現地で最新をご確認を。二人分で目安 ¥13,000ほど。</p>
+        <div class="brow"><span>渋谷・原宿さんぽ</span><b>¥0</b></div>
+        <div class="brow"><span>明治神宮（入苑）</span><b>¥0</b></div>
+        <div class="brow"><span>カフェ休憩（スタバ）</span><b>¥700</b></div>
+        <div class="brow"><span>岡本太郎記念館（入館）</span><b>¥650</b></div>
+        <div class="brow"><span>夕食（寅福 青山本店）</span><b>¥2,500</b></div>
+        <div class="brow"><span>神宮外苑花火大会</span><b>¥0</b></div>
+        <div class="brow"><span>交通費（IC）</span><b>¥700</b></div>
+        <div class="btot"><span style="font-weight:700;">合計めやす（1人）</span><b>¥5,550</b></div>
+        <p class="note">※ 無料・ワンコイン中心のお財布にやさしいプラン。花火の有料観覧席を取る場合は別途。料金は変動するので現地・公式で最新をご確認を。二人分で目安 ¥11,100ほど。</p>
       </div>
     </div>
 
     <div class="detail hidden" data-id="dcheck" data-c="var(--pink-d)" data-title="持ちものリスト" data-num="CHECK">
       <div class="dbody" style="padding-top:22px;" id="checklist">
+        <img class="deco" src="uploads/index_im02.jpg" alt="">
         <p class="note" style="margin:0 0 16px;">タップでチェックできます ✓</p>
         <div class="check"><div class="box"></div><span class="lbl">スマホ＆モバイルバッテリー</span></div>
         <div class="check"><div class="box"></div><span class="lbl">現金・交通系IC</span></div>
@@ -327,20 +284,20 @@
         <div class="check"><div class="box"></div><span class="lbl">ハンカチ・ティッシュ</span></div>
         <div class="check"><div class="box"></div><span class="lbl">日焼け止め</span></div>
         <div class="check"><div class="box"></div><span class="lbl">カメラ</span></div>
-        <div class="check"><div class="box"></div><span class="lbl">絆創膏など救急セット</span></div>
+        <div class="check"><div class="box"></div><span class="lbl">花火・サモエド予約の確認</span></div>
         <div class="check"><div class="box"></div><span class="lbl">歩きやすい靴</span></div>
       </div>
     </div>
 
     <div class="detail hidden" data-id="daccess" data-c="var(--sky-d)" data-title="移動メモ" data-num="ACCESS">
       <div class="dbody" style="padding-top:26px;">
-        <div class="mrow"><div><div class="mroute">原宿駅 → 明治神宮</div><div class="mhow">徒歩（南参道入口）</div></div><span class="mtime">約2分</span></div>
-        <div class="mrow"><div><div class="mroute">明治神宮 → JB's TOKYO 渋谷店</div><div class="mhow">徒歩 or JR（1駅）</div></div><span class="mtime">約15分</span></div>
-        <div class="mrow"><div><div class="mroute">JB's → 美術館 → 表参道 → 代々木公園</div><div class="mhow">すべて徒歩圏（原宿エリア）</div></div><span class="mtime">各5〜10分</span></div>
-        <div class="mrow"><div><div class="mroute">代々木公園 → bills 表参道</div><div class="mhow">徒歩（表参道）</div></div><span class="mtime">約10分</span></div>
-        <div class="mrow"><div><div class="mroute">表参道 → 新宿駅</div><div class="mhow">原宿からJR山手線（1駅）</div></div><span class="mtime">約5分</span></div>
-        <div class="mrow"><div><div class="mroute">新宿駅 → 東京都庁</div><div class="mhow">徒歩（西新宿）</div></div><span class="mtime">約10分</span></div>
-        <p class="note" style="margin-top:20px;">交通系ICがあると一駅移動もスムーズ。無料スポットが主役なので、その分ランチとカフェは少し贅沢しても◎</p>
+        <div class="mrow"><div><div class="mroute">渋谷駅 → JB's ミヤシタパーク</div><div class="mhow">徒歩（MIYASHITA PARK）</div></div><span class="mtime">約3分</span></div>
+        <div class="mrow"><div><div class="mroute">JB's → 原宿・明治神宮</div><div class="mhow">キャットストリートを徒歩</div></div><span class="mtime">約25分</span></div>
+        <div class="mrow"><div><div class="mroute">明治神宮 → スタバ 東急プラザ</div><div class="mhow">徒歩（原宿駅前）</div></div><span class="mtime">約8分</span></div>
+        <div class="mrow"><div><div class="mroute">スタバ → 岡本太郎記念館</div><div class="mhow">表参道方面へ徒歩</div></div><span class="mtime">約30分</span></div>
+        <div class="mrow"><div><div class="mroute">岡本太郎記念館 → 寅福 青山本店</div><div class="mhow">南青山を徒歩</div></div><span class="mtime">約8分</span></div>
+        <div class="mrow"><div><div class="mroute">寅福 → 神宮外苑（花火）</div><div class="mhow">徒歩（青山通り方面）</div></div><span class="mtime">約15分</span></div>
+        <p class="note" style="margin-top:20px;">交通系ICがあると移動がスムーズ。午前〜夕方は原宿・表参道・南青山エリアをほぼ徒歩で回れる。真夏の午後は岡本太郎記念館で涼み、夕食の青山だけメトロで小旅行。夜は花火会場まで徒歩でフィナーレ。</p>
       </div>
     </div>
 
@@ -357,72 +314,53 @@
             </defs>
             <rect x="0" y="0" width="360" height="350" fill="#f2f8f4"/>
             <rect x="0" y="0" width="360" height="350" fill="url(#grid)"/>
-            <!-- water accent (bit of pond) -->
-            <ellipse cx="150" cy="118" rx="10" ry="7" fill="#bfe0ef"/>
-            <!-- green: meiji jingu forest + yoyogi park (one big green mass) -->
-            <path d="M20 60 q60 -26 120 -10 q42 20 40 70 q28 34 4 78 q-46 26 -104 14 q-42 -8 -66 -46 q-22 -50 6 -84 q0 -14 0 -16z" fill="#cdeacf"/>
-            <path d="M40 66 q46 -14 86 -4 q-4 -18 -30 -24 q-40 -6 -56 28z" fill="#bfe3c2"/>
-            <text x="60" y="86" class="grn">代々木公園</text>
-            <text x="112" y="150" class="grn">明治神宮</text>
-            <text x="118" y="164" class="grn" style="font-size:7.5px; stroke-width:2px;">（鎮守の森）</text>
-            <!-- NHK -->
-            <rect x="46" y="150" width="26" height="16" rx="3" fill="#dfe6ef"/><text x="59" y="161" style="font-size:7px; fill:#8b8aa5; font-weight:700;" text-anchor="middle">NHK</text>
-            <!-- 体育館 -->
-            <circle cx="118" cy="108" r="9" fill="#dfe6ef"/><text x="118" y="111" style="font-size:6px; fill:#8b8aa5; font-weight:700;" text-anchor="middle">体育館</text>
-
-            <!-- ROADS -->
+            <!-- green: meiji jingu / yoyogi (left) -->
+            <path d="M8 60 q54 -22 104 -6 q36 22 30 66 q22 34 -4 72 q-44 22 -94 8 q-38 -10 -52 -46 q-18 -46 10 -80z" fill="#cdeacf"/>
+            <text x="40" y="92" class="grn">代々木公園</text>
+            <text x="52" y="162" class="grn">明治神宮</text>
+            <!-- gaien green (top right) -->
+            <path d="M262 60 q30 -10 46 8 q10 26 -10 42 q-28 10 -44 -8 q-8 -24 8 -42z" fill="#cfe9d6"/>
+            <text x="286" y="84" class="grn" style="font-size:7.5px;">神宮外苑</text>
+            <!-- roads -->
             <g fill="none" stroke-linecap="round">
-              <!-- yamanote line (rail) to shinjuku -->
-              <path d="M150 190 Q170 120 300 66" stroke="#c8d0e8" stroke-width="7"/>
-              <path d="M150 190 Q170 120 300 66" stroke="#fff" stroke-width="2.4" stroke-dasharray="1 7"/>
-              <!-- omotesando -->
-              <path d="M150 188 L246 150" stroke="#eadf9a" stroke-width="9"/>
-              <!-- meiji dori (to shibuya) -->
-              <path d="M150 190 Q168 250 250 300" stroke="#e6e2f0" stroke-width="9"/>
-              <!-- cat street -->
-              <path d="M178 176 Q200 232 250 300" stroke="#eee9f6" stroke-width="5"/>
-              <!-- takeshita dori -->
-              <path d="M150 186 L120 172" stroke="#f3d7e3" stroke-width="6"/>
+              <path d="M150 300 Q150 240 150 190" stroke="#eee9f6" stroke-width="6"/>   <!-- cat street 渋谷->原宿 -->
+              <path d="M150 180 L262 168" stroke="#eadf9a" stroke-width="9"/>            <!-- 表参道 -->
+              <path d="M262 168 Q292 140 296 104" stroke="#e6e2f0" stroke-width="8"/>    <!-- 青山->外苑 -->
             </g>
-            <text x="196" y="158" class="rd" transform="rotate(-22 196 158)">表参道</text>
-            <text x="205" y="240" class="rd" transform="rotate(52 205 240)">明治通り</text>
-            <text x="228" y="250" class="rd" transform="rotate(52 228 250)" style="font-size:6.5px;">キャットストリート</text>
-            <text x="120" y="166" class="rd" style="font-size:6.5px;">竹下通り</text>
-            <text x="238" y="108" class="rd" transform="rotate(-30 238 108)">JR山手線</text>
-
+            <!-- walk to 岡本太郎記念館 (南青山) -->
+            <path d="M262 168 Q292 168 300 152" fill="none" stroke="#c9b6e6" stroke-width="3" stroke-dasharray="3 6" stroke-linecap="round"/>
+            <text x="200" y="172" class="rd" transform="rotate(-6 200 172)">表参道</text>
+            <text x="128" y="248" class="rd" transform="rotate(80 128 248)" style="font-size:6.5px;">キャットストリート</text>
             <!-- district labels -->
-            <text x="150" y="205" class="lbl" text-anchor="middle">原宿</text>
-            <text x="292" y="300" class="lbl" text-anchor="middle" style="fill:#c58a2a;">渋谷</text>
-            <text x="300" y="52" class="lbl" text-anchor="middle">新宿</text>
-
-            <!-- compass -->
-            <g transform="translate(332,30)"><circle r="12" fill="#fff" filter="url(#soft)"/><path d="M0 -8 L3 2 L0 0 L-3 2 Z" fill="#ef5f96"/><text x="0" y="-13" style="font-size:7px; fill:#7a72a0; font-weight:700;" text-anchor="middle">N</text></g>
-
-            <!-- PINS (tappable → Google Maps) -->
+            <text x="150" y="200" class="lbl" text-anchor="middle">原宿</text>
+            <text x="150" y="332" class="lbl" text-anchor="middle" style="fill:#c58a2a;">渋谷</text>
+            <text x="258" y="200" class="lbl" text-anchor="middle">青山</text>
+            <text x="308" y="138" class="lbl" text-anchor="middle" style="fill:#c85a86;">南青山</text>
+            <g transform="translate(24,30)"><circle r="12" fill="#fff" filter="url(#soft)"/><path d="M0 -8 L3 2 L0 0 L-3 2 Z" fill="#ef5f96"/><text x="0" y="-13" style="font-size:7px; fill:#7a72a0; font-weight:700;" text-anchor="middle">N</text></g>
             <g font-family="'Fredoka',sans-serif" font-weight="700" font-size="12" text-anchor="middle">
-              <a href="https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E5%AE%BF%E9%A7%85" target="_blank"><circle cx="150" cy="190" r="13" fill="#ef5f96" filter="url(#soft)"/><text x="150" y="194" fill="#fff">1</text></a>
-              <a href="https://www.google.com/maps/search/?api=1&query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE" target="_blank"><circle cx="108" cy="128" r="13" fill="#4bb86a" filter="url(#soft)"/><text x="108" y="132" fill="#fff">2</text></a>
-              <a href="https://www.google.com/maps/search/?api=1&query=JB's%20TOKYO%20%E6%B8%8B%E8%B0%B7" target="_blank"><circle cx="252" cy="304" r="13" fill="#ffcb3c" filter="url(#soft)"/><text x="252" y="308" fill="#7a5a12">3</text></a>
-              <a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E7%94%B0%E8%A8%98%E5%BF%B5%E7%BE%8E%E8%A1%93%E9%A4%A8" target="_blank"><circle cx="168" cy="176" r="13" fill="#2f8fd0" filter="url(#soft)"/><text x="168" y="180" fill="#fff">4</text></a>
-              <a href="https://www.google.com/maps/search/?api=1&query=%E8%A1%A8%E5%8F%82%E9%81%93" target="_blank"><circle cx="224" cy="158" r="13" fill="#ef5f96" filter="url(#soft)"/><text x="224" y="162" fill="#fff">5</text></a>
-              <a href="https://www.google.com/maps/search/?api=1&query=%E4%BB%A3%E3%80%85%E6%9C%A8%E5%85%AC%E5%9C%92" target="_blank"><circle cx="76" cy="100" r="13" fill="#4bb86a" filter="url(#soft)"/><text x="76" y="104" fill="#fff">6</text></a>
-              <a href="https://www.google.com/maps/search/?api=1&query=bills%20%E8%A1%A8%E5%8F%82%E9%81%93" target="_blank"><circle cx="252" cy="140" r="13" fill="#ffcb3c" filter="url(#soft)"/><text x="252" y="144" fill="#7a5a12">7</text></a>
-              <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%E5%B1%95%E6%9C%9B%E5%AE%A4" target="_blank"><circle cx="326" cy="84" r="13" fill="#9b6fd6" filter="url(#soft)"/><text x="326" y="88" fill="#fff">8</text></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=渋谷駅 ハチ公像" target="_blank"><circle cx="134" cy="312" r="13" fill="#5ab8ee" filter="url(#soft)"/><text x="134" y="316" fill="#fff">0</text></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=JB's TOKYO ミヤシタパーク" target="_blank"><circle cx="170" cy="300" r="13" fill="#ffcb3c" filter="url(#soft)"/><text x="170" y="304" fill="#7a5a12">1</text></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=キャットストリート 原宿" target="_blank"><circle cx="150" cy="244" r="13" fill="#ef5f96" filter="url(#soft)"/><text x="150" y="248" fill="#fff">2</text></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=明治神宮" target="_blank"><circle cx="84" cy="146" r="13" fill="#4bb86a" filter="url(#soft)"/><text x="84" y="150" fill="#fff">3</text></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=東急プラザ表参道原宿" target="_blank"><circle cx="150" cy="180" r="13" fill="#2f8fd0" filter="url(#soft)"/><text x="150" y="184" fill="#fff">4</text></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=岡本太郎記念館" target="_blank"><circle cx="300" cy="150" r="13" fill="#ef5f96" filter="url(#soft)"/><text x="300" y="154" fill="#fff">5</text></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=寅福 青山本店" target="_blank"><circle cx="258" cy="172" r="13" fill="#ffcb3c" filter="url(#soft)"/><text x="258" y="176" fill="#7a5a12">6</text></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=明治神宮外苑 神宮球場" target="_blank"><circle cx="296" cy="104" r="13" fill="#9b6fd6" filter="url(#soft)"/><text x="296" y="108" fill="#fff">7</text></a>
             </g>
           </svg>
           <div style="padding:9px 14px; background:#f6f2fd; font-size:11px; color:#7a72a0; font-weight:700; text-align:center;">📍 地図のピンをタップ → Googleマップが開きます</div>
         </div>
         <div class="maplg">
-          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E5%AE%BF%E9%A7%85"><span class="pin" style="background:#ef5f96">1</span>原宿駅（集合）</a>
-          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE"><span class="pin" style="background:#4bb86a">2</span>明治神宮</a>
-          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=JB's%20TOKYO%20%E6%B8%8B%E8%B0%B7"><span class="pin" style="background:#ffcb3c;color:#7a5a12">3</span>JB's 渋谷店</a>
-          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%AA%E7%94%B0%E8%A8%98%E5%BF%B5%E7%BE%8E%E8%A1%93%E9%A4%A8"><span class="pin" style="background:#2f8fd0">4</span>太田記念美術館</a>
-          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E8%A1%A8%E5%8F%82%E9%81%93"><span class="pin" style="background:#ef5f96">5</span>表参道</a>
-          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%A3%E3%80%85%E6%9C%A8%E5%85%AC%E5%9C%92"><span class="pin" style="background:#4bb86a">6</span>代々木公園</a>
-          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=bills%20%E8%A1%A8%E5%8F%82%E9%81%93"><span class="pin" style="background:#ffcb3c;color:#7a5a12">7</span>bills 表参道（夕食）</a>
-          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%BA%81%E5%B1%95%E6%9C%9B%E5%AE%A4"><span class="pin" style="background:#9b6fd6">8</span>都庁展望室</a>
+          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=渋谷駅 ハチ公像"><span class="pin" style="background:#5ab8ee">0</span>渋谷駅（集合）</a>
+          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=JB's TOKYO ミヤシタパーク"><span class="pin" style="background:#ffcb3c;color:#7a5a12">1</span>JB's ミヤシタパーク店</a>
+          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=キャットストリート 原宿"><span class="pin" style="background:#ef5f96">2</span>渋谷・原宿さんぽ</a>
+          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=明治神宮"><span class="pin" style="background:#4bb86a">3</span>明治神宮</a>
+          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=東急プラザ表参道原宿"><span class="pin" style="background:#2f8fd0">4</span>スタバ 東急プラザ</a>
+          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=岡本太郎記念館"><span class="pin" style="background:#ef5f96">5</span>岡本太郎記念館</a>
+          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=寅福 青山本店"><span class="pin" style="background:#ffcb3c;color:#7a5a12">6</span>寅福 青山本店（夕食）</a>
+          <a class="lgi" style="text-decoration:none;color:#4a4560;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=明治神宮外苑 神宮球場"><span class="pin" style="background:#9b6fd6">7</span>神宮外苑花火大会</a>
         </div>
-        <p class="note" style="padding:0 4px 40px;">※ 位置関係をつかむためのイメージ図です。①〜⑦は原宿・表参道・代々木エリアに集中（③のJB's渋谷店以外はすべて徒歩圏）、締めの⑧都庁へは原宿からJRで一駅。正確な道順はピンや凡例をタップしてGoogleマップでご確認を。</p>
+        <p class="note" style="padding:0 4px 40px;">※ 位置関係をつかむためのイメージ図です。⑩渋谷集合→①ランチ→キャットストリートを北上して②〜④原宿・明治神宮へ。そのあと⑤岡本太郎記念館（南青山）で涼んで→徒歩で⑥夕食→⑦神宮外苑の花火。正確な道順はピンや凡例をタップしてGoogleマップでご確認を。</p>
       </div>
     </div>
 
@@ -448,6 +386,8 @@
   document.getElementById('back').addEventListener('click',close);
   document.getElementById('checklist').addEventListener('click',function(e){ var r=e.target.closest('.check'); if(r) r.classList.toggle('on'); });
 </script>
+<script src="image-slot.js"></script>
 </body>
 </html>
+
 
